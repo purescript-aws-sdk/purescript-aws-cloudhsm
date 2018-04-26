@@ -252,7 +252,7 @@ Encode CloudHsmObjectState
 
 ``` purescript
 newtype CloudHsmServiceException
-  = CloudHsmServiceException { message :: NullOrUndefined (String), retryable :: NullOrUndefined (Boolean) }
+  = CloudHsmServiceException { message :: Maybe (String), retryable :: Maybe (Boolean) }
 ```
 
 <p>Indicates that an exception occurred in the AWS CloudHSM service.</p>
@@ -277,7 +277,7 @@ Constructs CloudHsmServiceException from required parameters
 #### `newCloudHsmServiceException'`
 
 ``` purescript
-newCloudHsmServiceException' :: ({ message :: NullOrUndefined (String), retryable :: NullOrUndefined (Boolean) } -> { message :: NullOrUndefined (String), retryable :: NullOrUndefined (Boolean) }) -> CloudHsmServiceException
+newCloudHsmServiceException' :: ({ message :: Maybe (String), retryable :: Maybe (Boolean) } -> { message :: Maybe (String), retryable :: Maybe (Boolean) }) -> CloudHsmServiceException
 ```
 
 Constructs CloudHsmServiceException's fields from required parameters
@@ -320,7 +320,7 @@ Constructs CreateHapgRequest's fields from required parameters
 
 ``` purescript
 newtype CreateHapgResponse
-  = CreateHapgResponse { "HapgArn" :: NullOrUndefined (HapgArn) }
+  = CreateHapgResponse { "HapgArn" :: Maybe (HapgArn) }
 ```
 
 <p>Contains the output of the <a>CreateHAPartitionGroup</a> action.</p>
@@ -345,7 +345,7 @@ Constructs CreateHapgResponse from required parameters
 #### `newCreateHapgResponse'`
 
 ``` purescript
-newCreateHapgResponse' :: ({ "HapgArn" :: NullOrUndefined (HapgArn) } -> { "HapgArn" :: NullOrUndefined (HapgArn) }) -> CreateHapgResponse
+newCreateHapgResponse' :: ({ "HapgArn" :: Maybe (HapgArn) } -> { "HapgArn" :: Maybe (HapgArn) }) -> CreateHapgResponse
 ```
 
 Constructs CreateHapgResponse's fields from required parameters
@@ -354,7 +354,7 @@ Constructs CreateHapgResponse's fields from required parameters
 
 ``` purescript
 newtype CreateHsmRequest
-  = CreateHsmRequest { "SubnetId" :: SubnetId, "SshKey" :: SshKey, "EniIp" :: NullOrUndefined (IpAddress), "IamRoleArn" :: IamRoleArn, "ExternalId" :: NullOrUndefined (ExternalId), "SubscriptionType" :: SubscriptionType, "ClientToken" :: NullOrUndefined (ClientToken), "SyslogIp" :: NullOrUndefined (IpAddress) }
+  = CreateHsmRequest { "SubnetId" :: SubnetId, "SshKey" :: SshKey, "EniIp" :: Maybe (IpAddress), "IamRoleArn" :: IamRoleArn, "ExternalId" :: Maybe (ExternalId), "SubscriptionType" :: SubscriptionType, "ClientToken" :: Maybe (ClientToken), "SyslogIp" :: Maybe (IpAddress) }
 ```
 
 <p>Contains the inputs for the <code>CreateHsm</code> operation.</p>
@@ -379,7 +379,7 @@ Constructs CreateHsmRequest from required parameters
 #### `newCreateHsmRequest'`
 
 ``` purescript
-newCreateHsmRequest' :: IamRoleArn -> SshKey -> SubnetId -> SubscriptionType -> ({ "SubnetId" :: SubnetId, "SshKey" :: SshKey, "EniIp" :: NullOrUndefined (IpAddress), "IamRoleArn" :: IamRoleArn, "ExternalId" :: NullOrUndefined (ExternalId), "SubscriptionType" :: SubscriptionType, "ClientToken" :: NullOrUndefined (ClientToken), "SyslogIp" :: NullOrUndefined (IpAddress) } -> { "SubnetId" :: SubnetId, "SshKey" :: SshKey, "EniIp" :: NullOrUndefined (IpAddress), "IamRoleArn" :: IamRoleArn, "ExternalId" :: NullOrUndefined (ExternalId), "SubscriptionType" :: SubscriptionType, "ClientToken" :: NullOrUndefined (ClientToken), "SyslogIp" :: NullOrUndefined (IpAddress) }) -> CreateHsmRequest
+newCreateHsmRequest' :: IamRoleArn -> SshKey -> SubnetId -> SubscriptionType -> ({ "SubnetId" :: SubnetId, "SshKey" :: SshKey, "EniIp" :: Maybe (IpAddress), "IamRoleArn" :: IamRoleArn, "ExternalId" :: Maybe (ExternalId), "SubscriptionType" :: SubscriptionType, "ClientToken" :: Maybe (ClientToken), "SyslogIp" :: Maybe (IpAddress) } -> { "SubnetId" :: SubnetId, "SshKey" :: SshKey, "EniIp" :: Maybe (IpAddress), "IamRoleArn" :: IamRoleArn, "ExternalId" :: Maybe (ExternalId), "SubscriptionType" :: SubscriptionType, "ClientToken" :: Maybe (ClientToken), "SyslogIp" :: Maybe (IpAddress) }) -> CreateHsmRequest
 ```
 
 Constructs CreateHsmRequest's fields from required parameters
@@ -388,7 +388,7 @@ Constructs CreateHsmRequest's fields from required parameters
 
 ``` purescript
 newtype CreateHsmResponse
-  = CreateHsmResponse { "HsmArn" :: NullOrUndefined (HsmArn) }
+  = CreateHsmResponse { "HsmArn" :: Maybe (HsmArn) }
 ```
 
 <p>Contains the output of the <code>CreateHsm</code> operation.</p>
@@ -413,7 +413,7 @@ Constructs CreateHsmResponse from required parameters
 #### `newCreateHsmResponse'`
 
 ``` purescript
-newCreateHsmResponse' :: ({ "HsmArn" :: NullOrUndefined (HsmArn) } -> { "HsmArn" :: NullOrUndefined (HsmArn) }) -> CreateHsmResponse
+newCreateHsmResponse' :: ({ "HsmArn" :: Maybe (HsmArn) } -> { "HsmArn" :: Maybe (HsmArn) }) -> CreateHsmResponse
 ```
 
 Constructs CreateHsmResponse's fields from required parameters
@@ -422,7 +422,7 @@ Constructs CreateHsmResponse's fields from required parameters
 
 ``` purescript
 newtype CreateLunaClientRequest
-  = CreateLunaClientRequest { "Label" :: NullOrUndefined (ClientLabel), "Certificate" :: Certificate }
+  = CreateLunaClientRequest { "Label" :: Maybe (ClientLabel), "Certificate" :: Certificate }
 ```
 
 <p>Contains the inputs for the <a>CreateLunaClient</a> action.</p>
@@ -447,7 +447,7 @@ Constructs CreateLunaClientRequest from required parameters
 #### `newCreateLunaClientRequest'`
 
 ``` purescript
-newCreateLunaClientRequest' :: Certificate -> ({ "Label" :: NullOrUndefined (ClientLabel), "Certificate" :: Certificate } -> { "Label" :: NullOrUndefined (ClientLabel), "Certificate" :: Certificate }) -> CreateLunaClientRequest
+newCreateLunaClientRequest' :: Certificate -> ({ "Label" :: Maybe (ClientLabel), "Certificate" :: Certificate } -> { "Label" :: Maybe (ClientLabel), "Certificate" :: Certificate }) -> CreateLunaClientRequest
 ```
 
 Constructs CreateLunaClientRequest's fields from required parameters
@@ -456,7 +456,7 @@ Constructs CreateLunaClientRequest's fields from required parameters
 
 ``` purescript
 newtype CreateLunaClientResponse
-  = CreateLunaClientResponse { "ClientArn" :: NullOrUndefined (ClientArn) }
+  = CreateLunaClientResponse { "ClientArn" :: Maybe (ClientArn) }
 ```
 
 <p>Contains the output of the <a>CreateLunaClient</a> action.</p>
@@ -481,7 +481,7 @@ Constructs CreateLunaClientResponse from required parameters
 #### `newCreateLunaClientResponse'`
 
 ``` purescript
-newCreateLunaClientResponse' :: ({ "ClientArn" :: NullOrUndefined (ClientArn) } -> { "ClientArn" :: NullOrUndefined (ClientArn) }) -> CreateLunaClientResponse
+newCreateLunaClientResponse' :: ({ "ClientArn" :: Maybe (ClientArn) } -> { "ClientArn" :: Maybe (ClientArn) }) -> CreateLunaClientResponse
 ```
 
 Constructs CreateLunaClientResponse's fields from required parameters
@@ -724,7 +724,7 @@ Constructs DescribeHapgRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeHapgResponse
-  = DescribeHapgResponse { "HapgArn" :: NullOrUndefined (HapgArn), "HapgSerial" :: NullOrUndefined (String), "HsmsLastActionFailed" :: NullOrUndefined (HsmList), "HsmsPendingDeletion" :: NullOrUndefined (HsmList), "HsmsPendingRegistration" :: NullOrUndefined (HsmList), "Label" :: NullOrUndefined (Label), "LastModifiedTimestamp" :: NullOrUndefined (Timestamp), "PartitionSerialList" :: NullOrUndefined (PartitionSerialList), "State" :: NullOrUndefined (CloudHsmObjectState) }
+  = DescribeHapgResponse { "HapgArn" :: Maybe (HapgArn), "HapgSerial" :: Maybe (String), "HsmsLastActionFailed" :: Maybe (HsmList), "HsmsPendingDeletion" :: Maybe (HsmList), "HsmsPendingRegistration" :: Maybe (HsmList), "Label" :: Maybe (Label), "LastModifiedTimestamp" :: Maybe (Timestamp), "PartitionSerialList" :: Maybe (PartitionSerialList), "State" :: Maybe (CloudHsmObjectState) }
 ```
 
 <p>Contains the output of the <a>DescribeHapg</a> action.</p>
@@ -749,7 +749,7 @@ Constructs DescribeHapgResponse from required parameters
 #### `newDescribeHapgResponse'`
 
 ``` purescript
-newDescribeHapgResponse' :: ({ "HapgArn" :: NullOrUndefined (HapgArn), "HapgSerial" :: NullOrUndefined (String), "HsmsLastActionFailed" :: NullOrUndefined (HsmList), "HsmsPendingDeletion" :: NullOrUndefined (HsmList), "HsmsPendingRegistration" :: NullOrUndefined (HsmList), "Label" :: NullOrUndefined (Label), "LastModifiedTimestamp" :: NullOrUndefined (Timestamp), "PartitionSerialList" :: NullOrUndefined (PartitionSerialList), "State" :: NullOrUndefined (CloudHsmObjectState) } -> { "HapgArn" :: NullOrUndefined (HapgArn), "HapgSerial" :: NullOrUndefined (String), "HsmsLastActionFailed" :: NullOrUndefined (HsmList), "HsmsPendingDeletion" :: NullOrUndefined (HsmList), "HsmsPendingRegistration" :: NullOrUndefined (HsmList), "Label" :: NullOrUndefined (Label), "LastModifiedTimestamp" :: NullOrUndefined (Timestamp), "PartitionSerialList" :: NullOrUndefined (PartitionSerialList), "State" :: NullOrUndefined (CloudHsmObjectState) }) -> DescribeHapgResponse
+newDescribeHapgResponse' :: ({ "HapgArn" :: Maybe (HapgArn), "HapgSerial" :: Maybe (String), "HsmsLastActionFailed" :: Maybe (HsmList), "HsmsPendingDeletion" :: Maybe (HsmList), "HsmsPendingRegistration" :: Maybe (HsmList), "Label" :: Maybe (Label), "LastModifiedTimestamp" :: Maybe (Timestamp), "PartitionSerialList" :: Maybe (PartitionSerialList), "State" :: Maybe (CloudHsmObjectState) } -> { "HapgArn" :: Maybe (HapgArn), "HapgSerial" :: Maybe (String), "HsmsLastActionFailed" :: Maybe (HsmList), "HsmsPendingDeletion" :: Maybe (HsmList), "HsmsPendingRegistration" :: Maybe (HsmList), "Label" :: Maybe (Label), "LastModifiedTimestamp" :: Maybe (Timestamp), "PartitionSerialList" :: Maybe (PartitionSerialList), "State" :: Maybe (CloudHsmObjectState) }) -> DescribeHapgResponse
 ```
 
 Constructs DescribeHapgResponse's fields from required parameters
@@ -758,7 +758,7 @@ Constructs DescribeHapgResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeHsmRequest
-  = DescribeHsmRequest { "HsmArn" :: NullOrUndefined (HsmArn), "HsmSerialNumber" :: NullOrUndefined (HsmSerialNumber) }
+  = DescribeHsmRequest { "HsmArn" :: Maybe (HsmArn), "HsmSerialNumber" :: Maybe (HsmSerialNumber) }
 ```
 
 <p>Contains the inputs for the <a>DescribeHsm</a> operation.</p>
@@ -783,7 +783,7 @@ Constructs DescribeHsmRequest from required parameters
 #### `newDescribeHsmRequest'`
 
 ``` purescript
-newDescribeHsmRequest' :: ({ "HsmArn" :: NullOrUndefined (HsmArn), "HsmSerialNumber" :: NullOrUndefined (HsmSerialNumber) } -> { "HsmArn" :: NullOrUndefined (HsmArn), "HsmSerialNumber" :: NullOrUndefined (HsmSerialNumber) }) -> DescribeHsmRequest
+newDescribeHsmRequest' :: ({ "HsmArn" :: Maybe (HsmArn), "HsmSerialNumber" :: Maybe (HsmSerialNumber) } -> { "HsmArn" :: Maybe (HsmArn), "HsmSerialNumber" :: Maybe (HsmSerialNumber) }) -> DescribeHsmRequest
 ```
 
 Constructs DescribeHsmRequest's fields from required parameters
@@ -792,7 +792,7 @@ Constructs DescribeHsmRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeHsmResponse
-  = DescribeHsmResponse { "HsmArn" :: NullOrUndefined (HsmArn), "Status" :: NullOrUndefined (HsmStatus), "StatusDetails" :: NullOrUndefined (String), "AvailabilityZone" :: NullOrUndefined (AZ), "EniId" :: NullOrUndefined (EniId), "EniIp" :: NullOrUndefined (IpAddress), "SubscriptionType" :: NullOrUndefined (SubscriptionType), "SubscriptionStartDate" :: NullOrUndefined (Timestamp), "SubscriptionEndDate" :: NullOrUndefined (Timestamp), "VpcId" :: NullOrUndefined (VpcId), "SubnetId" :: NullOrUndefined (SubnetId), "IamRoleArn" :: NullOrUndefined (IamRoleArn), "SerialNumber" :: NullOrUndefined (HsmSerialNumber), "VendorName" :: NullOrUndefined (String), "HsmType" :: NullOrUndefined (String), "SoftwareVersion" :: NullOrUndefined (String), "SshPublicKey" :: NullOrUndefined (SshKey), "SshKeyLastUpdated" :: NullOrUndefined (Timestamp), "ServerCertUri" :: NullOrUndefined (String), "ServerCertLastUpdated" :: NullOrUndefined (Timestamp), "Partitions" :: NullOrUndefined (PartitionList) }
+  = DescribeHsmResponse { "HsmArn" :: Maybe (HsmArn), "Status" :: Maybe (HsmStatus), "StatusDetails" :: Maybe (String), "AvailabilityZone" :: Maybe (AZ), "EniId" :: Maybe (EniId), "EniIp" :: Maybe (IpAddress), "SubscriptionType" :: Maybe (SubscriptionType), "SubscriptionStartDate" :: Maybe (Timestamp), "SubscriptionEndDate" :: Maybe (Timestamp), "VpcId" :: Maybe (VpcId), "SubnetId" :: Maybe (SubnetId), "IamRoleArn" :: Maybe (IamRoleArn), "SerialNumber" :: Maybe (HsmSerialNumber), "VendorName" :: Maybe (String), "HsmType" :: Maybe (String), "SoftwareVersion" :: Maybe (String), "SshPublicKey" :: Maybe (SshKey), "SshKeyLastUpdated" :: Maybe (Timestamp), "ServerCertUri" :: Maybe (String), "ServerCertLastUpdated" :: Maybe (Timestamp), "Partitions" :: Maybe (PartitionList) }
 ```
 
 <p>Contains the output of the <a>DescribeHsm</a> operation.</p>
@@ -817,7 +817,7 @@ Constructs DescribeHsmResponse from required parameters
 #### `newDescribeHsmResponse'`
 
 ``` purescript
-newDescribeHsmResponse' :: ({ "HsmArn" :: NullOrUndefined (HsmArn), "Status" :: NullOrUndefined (HsmStatus), "StatusDetails" :: NullOrUndefined (String), "AvailabilityZone" :: NullOrUndefined (AZ), "EniId" :: NullOrUndefined (EniId), "EniIp" :: NullOrUndefined (IpAddress), "SubscriptionType" :: NullOrUndefined (SubscriptionType), "SubscriptionStartDate" :: NullOrUndefined (Timestamp), "SubscriptionEndDate" :: NullOrUndefined (Timestamp), "VpcId" :: NullOrUndefined (VpcId), "SubnetId" :: NullOrUndefined (SubnetId), "IamRoleArn" :: NullOrUndefined (IamRoleArn), "SerialNumber" :: NullOrUndefined (HsmSerialNumber), "VendorName" :: NullOrUndefined (String), "HsmType" :: NullOrUndefined (String), "SoftwareVersion" :: NullOrUndefined (String), "SshPublicKey" :: NullOrUndefined (SshKey), "SshKeyLastUpdated" :: NullOrUndefined (Timestamp), "ServerCertUri" :: NullOrUndefined (String), "ServerCertLastUpdated" :: NullOrUndefined (Timestamp), "Partitions" :: NullOrUndefined (PartitionList) } -> { "HsmArn" :: NullOrUndefined (HsmArn), "Status" :: NullOrUndefined (HsmStatus), "StatusDetails" :: NullOrUndefined (String), "AvailabilityZone" :: NullOrUndefined (AZ), "EniId" :: NullOrUndefined (EniId), "EniIp" :: NullOrUndefined (IpAddress), "SubscriptionType" :: NullOrUndefined (SubscriptionType), "SubscriptionStartDate" :: NullOrUndefined (Timestamp), "SubscriptionEndDate" :: NullOrUndefined (Timestamp), "VpcId" :: NullOrUndefined (VpcId), "SubnetId" :: NullOrUndefined (SubnetId), "IamRoleArn" :: NullOrUndefined (IamRoleArn), "SerialNumber" :: NullOrUndefined (HsmSerialNumber), "VendorName" :: NullOrUndefined (String), "HsmType" :: NullOrUndefined (String), "SoftwareVersion" :: NullOrUndefined (String), "SshPublicKey" :: NullOrUndefined (SshKey), "SshKeyLastUpdated" :: NullOrUndefined (Timestamp), "ServerCertUri" :: NullOrUndefined (String), "ServerCertLastUpdated" :: NullOrUndefined (Timestamp), "Partitions" :: NullOrUndefined (PartitionList) }) -> DescribeHsmResponse
+newDescribeHsmResponse' :: ({ "HsmArn" :: Maybe (HsmArn), "Status" :: Maybe (HsmStatus), "StatusDetails" :: Maybe (String), "AvailabilityZone" :: Maybe (AZ), "EniId" :: Maybe (EniId), "EniIp" :: Maybe (IpAddress), "SubscriptionType" :: Maybe (SubscriptionType), "SubscriptionStartDate" :: Maybe (Timestamp), "SubscriptionEndDate" :: Maybe (Timestamp), "VpcId" :: Maybe (VpcId), "SubnetId" :: Maybe (SubnetId), "IamRoleArn" :: Maybe (IamRoleArn), "SerialNumber" :: Maybe (HsmSerialNumber), "VendorName" :: Maybe (String), "HsmType" :: Maybe (String), "SoftwareVersion" :: Maybe (String), "SshPublicKey" :: Maybe (SshKey), "SshKeyLastUpdated" :: Maybe (Timestamp), "ServerCertUri" :: Maybe (String), "ServerCertLastUpdated" :: Maybe (Timestamp), "Partitions" :: Maybe (PartitionList) } -> { "HsmArn" :: Maybe (HsmArn), "Status" :: Maybe (HsmStatus), "StatusDetails" :: Maybe (String), "AvailabilityZone" :: Maybe (AZ), "EniId" :: Maybe (EniId), "EniIp" :: Maybe (IpAddress), "SubscriptionType" :: Maybe (SubscriptionType), "SubscriptionStartDate" :: Maybe (Timestamp), "SubscriptionEndDate" :: Maybe (Timestamp), "VpcId" :: Maybe (VpcId), "SubnetId" :: Maybe (SubnetId), "IamRoleArn" :: Maybe (IamRoleArn), "SerialNumber" :: Maybe (HsmSerialNumber), "VendorName" :: Maybe (String), "HsmType" :: Maybe (String), "SoftwareVersion" :: Maybe (String), "SshPublicKey" :: Maybe (SshKey), "SshKeyLastUpdated" :: Maybe (Timestamp), "ServerCertUri" :: Maybe (String), "ServerCertLastUpdated" :: Maybe (Timestamp), "Partitions" :: Maybe (PartitionList) }) -> DescribeHsmResponse
 ```
 
 Constructs DescribeHsmResponse's fields from required parameters
@@ -826,7 +826,7 @@ Constructs DescribeHsmResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeLunaClientRequest
-  = DescribeLunaClientRequest { "ClientArn" :: NullOrUndefined (ClientArn), "CertificateFingerprint" :: NullOrUndefined (CertificateFingerprint) }
+  = DescribeLunaClientRequest { "ClientArn" :: Maybe (ClientArn), "CertificateFingerprint" :: Maybe (CertificateFingerprint) }
 ```
 
 ##### Instances
@@ -849,7 +849,7 @@ Constructs DescribeLunaClientRequest from required parameters
 #### `newDescribeLunaClientRequest'`
 
 ``` purescript
-newDescribeLunaClientRequest' :: ({ "ClientArn" :: NullOrUndefined (ClientArn), "CertificateFingerprint" :: NullOrUndefined (CertificateFingerprint) } -> { "ClientArn" :: NullOrUndefined (ClientArn), "CertificateFingerprint" :: NullOrUndefined (CertificateFingerprint) }) -> DescribeLunaClientRequest
+newDescribeLunaClientRequest' :: ({ "ClientArn" :: Maybe (ClientArn), "CertificateFingerprint" :: Maybe (CertificateFingerprint) } -> { "ClientArn" :: Maybe (ClientArn), "CertificateFingerprint" :: Maybe (CertificateFingerprint) }) -> DescribeLunaClientRequest
 ```
 
 Constructs DescribeLunaClientRequest's fields from required parameters
@@ -858,7 +858,7 @@ Constructs DescribeLunaClientRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeLunaClientResponse
-  = DescribeLunaClientResponse { "ClientArn" :: NullOrUndefined (ClientArn), "Certificate" :: NullOrUndefined (Certificate), "CertificateFingerprint" :: NullOrUndefined (CertificateFingerprint), "LastModifiedTimestamp" :: NullOrUndefined (Timestamp), "Label" :: NullOrUndefined (Label) }
+  = DescribeLunaClientResponse { "ClientArn" :: Maybe (ClientArn), "Certificate" :: Maybe (Certificate), "CertificateFingerprint" :: Maybe (CertificateFingerprint), "LastModifiedTimestamp" :: Maybe (Timestamp), "Label" :: Maybe (Label) }
 ```
 
 ##### Instances
@@ -881,7 +881,7 @@ Constructs DescribeLunaClientResponse from required parameters
 #### `newDescribeLunaClientResponse'`
 
 ``` purescript
-newDescribeLunaClientResponse' :: ({ "ClientArn" :: NullOrUndefined (ClientArn), "Certificate" :: NullOrUndefined (Certificate), "CertificateFingerprint" :: NullOrUndefined (CertificateFingerprint), "LastModifiedTimestamp" :: NullOrUndefined (Timestamp), "Label" :: NullOrUndefined (Label) } -> { "ClientArn" :: NullOrUndefined (ClientArn), "Certificate" :: NullOrUndefined (Certificate), "CertificateFingerprint" :: NullOrUndefined (CertificateFingerprint), "LastModifiedTimestamp" :: NullOrUndefined (Timestamp), "Label" :: NullOrUndefined (Label) }) -> DescribeLunaClientResponse
+newDescribeLunaClientResponse' :: ({ "ClientArn" :: Maybe (ClientArn), "Certificate" :: Maybe (Certificate), "CertificateFingerprint" :: Maybe (CertificateFingerprint), "LastModifiedTimestamp" :: Maybe (Timestamp), "Label" :: Maybe (Label) } -> { "ClientArn" :: Maybe (ClientArn), "Certificate" :: Maybe (Certificate), "CertificateFingerprint" :: Maybe (CertificateFingerprint), "LastModifiedTimestamp" :: Maybe (Timestamp), "Label" :: Maybe (Label) }) -> DescribeLunaClientResponse
 ```
 
 Constructs DescribeLunaClientResponse's fields from required parameters
@@ -954,7 +954,7 @@ Constructs GetConfigRequest's fields from required parameters
 
 ``` purescript
 newtype GetConfigResponse
-  = GetConfigResponse { "ConfigType" :: NullOrUndefined (String), "ConfigFile" :: NullOrUndefined (String), "ConfigCred" :: NullOrUndefined (String) }
+  = GetConfigResponse { "ConfigType" :: Maybe (String), "ConfigFile" :: Maybe (String), "ConfigCred" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -977,7 +977,7 @@ Constructs GetConfigResponse from required parameters
 #### `newGetConfigResponse'`
 
 ``` purescript
-newGetConfigResponse' :: ({ "ConfigType" :: NullOrUndefined (String), "ConfigFile" :: NullOrUndefined (String), "ConfigCred" :: NullOrUndefined (String) } -> { "ConfigType" :: NullOrUndefined (String), "ConfigFile" :: NullOrUndefined (String), "ConfigCred" :: NullOrUndefined (String) }) -> GetConfigResponse
+newGetConfigResponse' :: ({ "ConfigType" :: Maybe (String), "ConfigFile" :: Maybe (String), "ConfigCred" :: Maybe (String) } -> { "ConfigType" :: Maybe (String), "ConfigFile" :: Maybe (String), "ConfigCred" :: Maybe (String) }) -> GetConfigResponse
 ```
 
 Constructs GetConfigResponse's fields from required parameters
@@ -1170,7 +1170,7 @@ Encode ListAvailableZonesRequest
 
 ``` purescript
 newtype ListAvailableZonesResponse
-  = ListAvailableZonesResponse { "AZList" :: NullOrUndefined (AZList) }
+  = ListAvailableZonesResponse { "AZList" :: Maybe (AZList) }
 ```
 
 ##### Instances
@@ -1193,7 +1193,7 @@ Constructs ListAvailableZonesResponse from required parameters
 #### `newListAvailableZonesResponse'`
 
 ``` purescript
-newListAvailableZonesResponse' :: ({ "AZList" :: NullOrUndefined (AZList) } -> { "AZList" :: NullOrUndefined (AZList) }) -> ListAvailableZonesResponse
+newListAvailableZonesResponse' :: ({ "AZList" :: Maybe (AZList) } -> { "AZList" :: Maybe (AZList) }) -> ListAvailableZonesResponse
 ```
 
 Constructs ListAvailableZonesResponse's fields from required parameters
@@ -1202,7 +1202,7 @@ Constructs ListAvailableZonesResponse's fields from required parameters
 
 ``` purescript
 newtype ListHapgsRequest
-  = ListHapgsRequest { "NextToken" :: NullOrUndefined (PaginationToken) }
+  = ListHapgsRequest { "NextToken" :: Maybe (PaginationToken) }
 ```
 
 ##### Instances
@@ -1225,7 +1225,7 @@ Constructs ListHapgsRequest from required parameters
 #### `newListHapgsRequest'`
 
 ``` purescript
-newListHapgsRequest' :: ({ "NextToken" :: NullOrUndefined (PaginationToken) } -> { "NextToken" :: NullOrUndefined (PaginationToken) }) -> ListHapgsRequest
+newListHapgsRequest' :: ({ "NextToken" :: Maybe (PaginationToken) } -> { "NextToken" :: Maybe (PaginationToken) }) -> ListHapgsRequest
 ```
 
 Constructs ListHapgsRequest's fields from required parameters
@@ -1234,7 +1234,7 @@ Constructs ListHapgsRequest's fields from required parameters
 
 ``` purescript
 newtype ListHapgsResponse
-  = ListHapgsResponse { "HapgList" :: HapgList, "NextToken" :: NullOrUndefined (PaginationToken) }
+  = ListHapgsResponse { "HapgList" :: HapgList, "NextToken" :: Maybe (PaginationToken) }
 ```
 
 ##### Instances
@@ -1257,7 +1257,7 @@ Constructs ListHapgsResponse from required parameters
 #### `newListHapgsResponse'`
 
 ``` purescript
-newListHapgsResponse' :: HapgList -> ({ "HapgList" :: HapgList, "NextToken" :: NullOrUndefined (PaginationToken) } -> { "HapgList" :: HapgList, "NextToken" :: NullOrUndefined (PaginationToken) }) -> ListHapgsResponse
+newListHapgsResponse' :: HapgList -> ({ "HapgList" :: HapgList, "NextToken" :: Maybe (PaginationToken) } -> { "HapgList" :: HapgList, "NextToken" :: Maybe (PaginationToken) }) -> ListHapgsResponse
 ```
 
 Constructs ListHapgsResponse's fields from required parameters
@@ -1266,7 +1266,7 @@ Constructs ListHapgsResponse's fields from required parameters
 
 ``` purescript
 newtype ListHsmsRequest
-  = ListHsmsRequest { "NextToken" :: NullOrUndefined (PaginationToken) }
+  = ListHsmsRequest { "NextToken" :: Maybe (PaginationToken) }
 ```
 
 ##### Instances
@@ -1289,7 +1289,7 @@ Constructs ListHsmsRequest from required parameters
 #### `newListHsmsRequest'`
 
 ``` purescript
-newListHsmsRequest' :: ({ "NextToken" :: NullOrUndefined (PaginationToken) } -> { "NextToken" :: NullOrUndefined (PaginationToken) }) -> ListHsmsRequest
+newListHsmsRequest' :: ({ "NextToken" :: Maybe (PaginationToken) } -> { "NextToken" :: Maybe (PaginationToken) }) -> ListHsmsRequest
 ```
 
 Constructs ListHsmsRequest's fields from required parameters
@@ -1298,7 +1298,7 @@ Constructs ListHsmsRequest's fields from required parameters
 
 ``` purescript
 newtype ListHsmsResponse
-  = ListHsmsResponse { "HsmList" :: NullOrUndefined (HsmList), "NextToken" :: NullOrUndefined (PaginationToken) }
+  = ListHsmsResponse { "HsmList" :: Maybe (HsmList), "NextToken" :: Maybe (PaginationToken) }
 ```
 
 <p>Contains the output of the <code>ListHsms</code> operation.</p>
@@ -1323,7 +1323,7 @@ Constructs ListHsmsResponse from required parameters
 #### `newListHsmsResponse'`
 
 ``` purescript
-newListHsmsResponse' :: ({ "HsmList" :: NullOrUndefined (HsmList), "NextToken" :: NullOrUndefined (PaginationToken) } -> { "HsmList" :: NullOrUndefined (HsmList), "NextToken" :: NullOrUndefined (PaginationToken) }) -> ListHsmsResponse
+newListHsmsResponse' :: ({ "HsmList" :: Maybe (HsmList), "NextToken" :: Maybe (PaginationToken) } -> { "HsmList" :: Maybe (HsmList), "NextToken" :: Maybe (PaginationToken) }) -> ListHsmsResponse
 ```
 
 Constructs ListHsmsResponse's fields from required parameters
@@ -1332,7 +1332,7 @@ Constructs ListHsmsResponse's fields from required parameters
 
 ``` purescript
 newtype ListLunaClientsRequest
-  = ListLunaClientsRequest { "NextToken" :: NullOrUndefined (PaginationToken) }
+  = ListLunaClientsRequest { "NextToken" :: Maybe (PaginationToken) }
 ```
 
 ##### Instances
@@ -1355,7 +1355,7 @@ Constructs ListLunaClientsRequest from required parameters
 #### `newListLunaClientsRequest'`
 
 ``` purescript
-newListLunaClientsRequest' :: ({ "NextToken" :: NullOrUndefined (PaginationToken) } -> { "NextToken" :: NullOrUndefined (PaginationToken) }) -> ListLunaClientsRequest
+newListLunaClientsRequest' :: ({ "NextToken" :: Maybe (PaginationToken) } -> { "NextToken" :: Maybe (PaginationToken) }) -> ListLunaClientsRequest
 ```
 
 Constructs ListLunaClientsRequest's fields from required parameters
@@ -1364,7 +1364,7 @@ Constructs ListLunaClientsRequest's fields from required parameters
 
 ``` purescript
 newtype ListLunaClientsResponse
-  = ListLunaClientsResponse { "ClientList" :: ClientList, "NextToken" :: NullOrUndefined (PaginationToken) }
+  = ListLunaClientsResponse { "ClientList" :: ClientList, "NextToken" :: Maybe (PaginationToken) }
 ```
 
 ##### Instances
@@ -1387,7 +1387,7 @@ Constructs ListLunaClientsResponse from required parameters
 #### `newListLunaClientsResponse'`
 
 ``` purescript
-newListLunaClientsResponse' :: ClientList -> ({ "ClientList" :: ClientList, "NextToken" :: NullOrUndefined (PaginationToken) } -> { "ClientList" :: ClientList, "NextToken" :: NullOrUndefined (PaginationToken) }) -> ListLunaClientsResponse
+newListLunaClientsResponse' :: ClientList -> ({ "ClientList" :: ClientList, "NextToken" :: Maybe (PaginationToken) } -> { "ClientList" :: ClientList, "NextToken" :: Maybe (PaginationToken) }) -> ListLunaClientsResponse
 ```
 
 Constructs ListLunaClientsResponse's fields from required parameters
@@ -1460,7 +1460,7 @@ Constructs ListTagsForResourceResponse's fields from required parameters
 
 ``` purescript
 newtype ModifyHapgRequest
-  = ModifyHapgRequest { "HapgArn" :: HapgArn, "Label" :: NullOrUndefined (Label), "PartitionSerialList" :: NullOrUndefined (PartitionSerialList) }
+  = ModifyHapgRequest { "HapgArn" :: HapgArn, "Label" :: Maybe (Label), "PartitionSerialList" :: Maybe (PartitionSerialList) }
 ```
 
 ##### Instances
@@ -1483,7 +1483,7 @@ Constructs ModifyHapgRequest from required parameters
 #### `newModifyHapgRequest'`
 
 ``` purescript
-newModifyHapgRequest' :: HapgArn -> ({ "HapgArn" :: HapgArn, "Label" :: NullOrUndefined (Label), "PartitionSerialList" :: NullOrUndefined (PartitionSerialList) } -> { "HapgArn" :: HapgArn, "Label" :: NullOrUndefined (Label), "PartitionSerialList" :: NullOrUndefined (PartitionSerialList) }) -> ModifyHapgRequest
+newModifyHapgRequest' :: HapgArn -> ({ "HapgArn" :: HapgArn, "Label" :: Maybe (Label), "PartitionSerialList" :: Maybe (PartitionSerialList) } -> { "HapgArn" :: HapgArn, "Label" :: Maybe (Label), "PartitionSerialList" :: Maybe (PartitionSerialList) }) -> ModifyHapgRequest
 ```
 
 Constructs ModifyHapgRequest's fields from required parameters
@@ -1492,7 +1492,7 @@ Constructs ModifyHapgRequest's fields from required parameters
 
 ``` purescript
 newtype ModifyHapgResponse
-  = ModifyHapgResponse { "HapgArn" :: NullOrUndefined (HapgArn) }
+  = ModifyHapgResponse { "HapgArn" :: Maybe (HapgArn) }
 ```
 
 ##### Instances
@@ -1515,7 +1515,7 @@ Constructs ModifyHapgResponse from required parameters
 #### `newModifyHapgResponse'`
 
 ``` purescript
-newModifyHapgResponse' :: ({ "HapgArn" :: NullOrUndefined (HapgArn) } -> { "HapgArn" :: NullOrUndefined (HapgArn) }) -> ModifyHapgResponse
+newModifyHapgResponse' :: ({ "HapgArn" :: Maybe (HapgArn) } -> { "HapgArn" :: Maybe (HapgArn) }) -> ModifyHapgResponse
 ```
 
 Constructs ModifyHapgResponse's fields from required parameters
@@ -1524,7 +1524,7 @@ Constructs ModifyHapgResponse's fields from required parameters
 
 ``` purescript
 newtype ModifyHsmRequest
-  = ModifyHsmRequest { "HsmArn" :: HsmArn, "SubnetId" :: NullOrUndefined (SubnetId), "EniIp" :: NullOrUndefined (IpAddress), "IamRoleArn" :: NullOrUndefined (IamRoleArn), "ExternalId" :: NullOrUndefined (ExternalId), "SyslogIp" :: NullOrUndefined (IpAddress) }
+  = ModifyHsmRequest { "HsmArn" :: HsmArn, "SubnetId" :: Maybe (SubnetId), "EniIp" :: Maybe (IpAddress), "IamRoleArn" :: Maybe (IamRoleArn), "ExternalId" :: Maybe (ExternalId), "SyslogIp" :: Maybe (IpAddress) }
 ```
 
 <p>Contains the inputs for the <a>ModifyHsm</a> operation.</p>
@@ -1549,7 +1549,7 @@ Constructs ModifyHsmRequest from required parameters
 #### `newModifyHsmRequest'`
 
 ``` purescript
-newModifyHsmRequest' :: HsmArn -> ({ "HsmArn" :: HsmArn, "SubnetId" :: NullOrUndefined (SubnetId), "EniIp" :: NullOrUndefined (IpAddress), "IamRoleArn" :: NullOrUndefined (IamRoleArn), "ExternalId" :: NullOrUndefined (ExternalId), "SyslogIp" :: NullOrUndefined (IpAddress) } -> { "HsmArn" :: HsmArn, "SubnetId" :: NullOrUndefined (SubnetId), "EniIp" :: NullOrUndefined (IpAddress), "IamRoleArn" :: NullOrUndefined (IamRoleArn), "ExternalId" :: NullOrUndefined (ExternalId), "SyslogIp" :: NullOrUndefined (IpAddress) }) -> ModifyHsmRequest
+newModifyHsmRequest' :: HsmArn -> ({ "HsmArn" :: HsmArn, "SubnetId" :: Maybe (SubnetId), "EniIp" :: Maybe (IpAddress), "IamRoleArn" :: Maybe (IamRoleArn), "ExternalId" :: Maybe (ExternalId), "SyslogIp" :: Maybe (IpAddress) } -> { "HsmArn" :: HsmArn, "SubnetId" :: Maybe (SubnetId), "EniIp" :: Maybe (IpAddress), "IamRoleArn" :: Maybe (IamRoleArn), "ExternalId" :: Maybe (ExternalId), "SyslogIp" :: Maybe (IpAddress) }) -> ModifyHsmRequest
 ```
 
 Constructs ModifyHsmRequest's fields from required parameters
@@ -1558,7 +1558,7 @@ Constructs ModifyHsmRequest's fields from required parameters
 
 ``` purescript
 newtype ModifyHsmResponse
-  = ModifyHsmResponse { "HsmArn" :: NullOrUndefined (HsmArn) }
+  = ModifyHsmResponse { "HsmArn" :: Maybe (HsmArn) }
 ```
 
 <p>Contains the output of the <a>ModifyHsm</a> operation.</p>
@@ -1583,7 +1583,7 @@ Constructs ModifyHsmResponse from required parameters
 #### `newModifyHsmResponse'`
 
 ``` purescript
-newModifyHsmResponse' :: ({ "HsmArn" :: NullOrUndefined (HsmArn) } -> { "HsmArn" :: NullOrUndefined (HsmArn) }) -> ModifyHsmResponse
+newModifyHsmResponse' :: ({ "HsmArn" :: Maybe (HsmArn) } -> { "HsmArn" :: Maybe (HsmArn) }) -> ModifyHsmResponse
 ```
 
 Constructs ModifyHsmResponse's fields from required parameters
@@ -1624,7 +1624,7 @@ Constructs ModifyLunaClientRequest's fields from required parameters
 
 ``` purescript
 newtype ModifyLunaClientResponse
-  = ModifyLunaClientResponse { "ClientArn" :: NullOrUndefined (ClientArn) }
+  = ModifyLunaClientResponse { "ClientArn" :: Maybe (ClientArn) }
 ```
 
 ##### Instances
@@ -1647,7 +1647,7 @@ Constructs ModifyLunaClientResponse from required parameters
 #### `newModifyLunaClientResponse'`
 
 ``` purescript
-newModifyLunaClientResponse' :: ({ "ClientArn" :: NullOrUndefined (ClientArn) } -> { "ClientArn" :: NullOrUndefined (ClientArn) }) -> ModifyLunaClientResponse
+newModifyLunaClientResponse' :: ({ "ClientArn" :: Maybe (ClientArn) } -> { "ClientArn" :: Maybe (ClientArn) }) -> ModifyLunaClientResponse
 ```
 
 Constructs ModifyLunaClientResponse's fields from required parameters

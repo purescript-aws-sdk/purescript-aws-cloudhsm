@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -161,8 +160,8 @@ instance encodeCloudHsmObjectState :: Encode CloudHsmObjectState where encode = 
 
 -- | <p>Indicates that an exception occurred in the AWS CloudHSM service.</p>
 newtype CloudHsmServiceException = CloudHsmServiceException 
-  { "message" :: NullOrUndefined (String)
-  , "retryable" :: NullOrUndefined (Boolean)
+  { "message" :: Maybe (String)
+  , "retryable" :: Maybe (Boolean)
   }
 derive instance newtypeCloudHsmServiceException :: Newtype CloudHsmServiceException _
 derive instance repGenericCloudHsmServiceException :: Generic CloudHsmServiceException _
@@ -172,12 +171,12 @@ instance encodeCloudHsmServiceException :: Encode CloudHsmServiceException where
 
 -- | Constructs CloudHsmServiceException from required parameters
 newCloudHsmServiceException :: CloudHsmServiceException
-newCloudHsmServiceException  = CloudHsmServiceException { "message": (NullOrUndefined Nothing), "retryable": (NullOrUndefined Nothing) }
+newCloudHsmServiceException  = CloudHsmServiceException { "message": Nothing, "retryable": Nothing }
 
 -- | Constructs CloudHsmServiceException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCloudHsmServiceException' :: ( { "message" :: NullOrUndefined (String) , "retryable" :: NullOrUndefined (Boolean) } -> {"message" :: NullOrUndefined (String) , "retryable" :: NullOrUndefined (Boolean) } ) -> CloudHsmServiceException
-newCloudHsmServiceException'  customize = (CloudHsmServiceException <<< customize) { "message": (NullOrUndefined Nothing), "retryable": (NullOrUndefined Nothing) }
+newCloudHsmServiceException' :: ( { "message" :: Maybe (String) , "retryable" :: Maybe (Boolean) } -> {"message" :: Maybe (String) , "retryable" :: Maybe (Boolean) } ) -> CloudHsmServiceException
+newCloudHsmServiceException'  customize = (CloudHsmServiceException <<< customize) { "message": Nothing, "retryable": Nothing }
 
 
 
@@ -204,7 +203,7 @@ newCreateHapgRequest' _Label customize = (CreateHapgRequest <<< customize) { "La
 
 -- | <p>Contains the output of the <a>CreateHAPartitionGroup</a> action.</p>
 newtype CreateHapgResponse = CreateHapgResponse 
-  { "HapgArn" :: NullOrUndefined (HapgArn)
+  { "HapgArn" :: Maybe (HapgArn)
   }
 derive instance newtypeCreateHapgResponse :: Newtype CreateHapgResponse _
 derive instance repGenericCreateHapgResponse :: Generic CreateHapgResponse _
@@ -214,12 +213,12 @@ instance encodeCreateHapgResponse :: Encode CreateHapgResponse where encode = ge
 
 -- | Constructs CreateHapgResponse from required parameters
 newCreateHapgResponse :: CreateHapgResponse
-newCreateHapgResponse  = CreateHapgResponse { "HapgArn": (NullOrUndefined Nothing) }
+newCreateHapgResponse  = CreateHapgResponse { "HapgArn": Nothing }
 
 -- | Constructs CreateHapgResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateHapgResponse' :: ( { "HapgArn" :: NullOrUndefined (HapgArn) } -> {"HapgArn" :: NullOrUndefined (HapgArn) } ) -> CreateHapgResponse
-newCreateHapgResponse'  customize = (CreateHapgResponse <<< customize) { "HapgArn": (NullOrUndefined Nothing) }
+newCreateHapgResponse' :: ( { "HapgArn" :: Maybe (HapgArn) } -> {"HapgArn" :: Maybe (HapgArn) } ) -> CreateHapgResponse
+newCreateHapgResponse'  customize = (CreateHapgResponse <<< customize) { "HapgArn": Nothing }
 
 
 
@@ -227,12 +226,12 @@ newCreateHapgResponse'  customize = (CreateHapgResponse <<< customize) { "HapgAr
 newtype CreateHsmRequest = CreateHsmRequest 
   { "SubnetId" :: (SubnetId)
   , "SshKey" :: (SshKey)
-  , "EniIp" :: NullOrUndefined (IpAddress)
+  , "EniIp" :: Maybe (IpAddress)
   , "IamRoleArn" :: (IamRoleArn)
-  , "ExternalId" :: NullOrUndefined (ExternalId)
+  , "ExternalId" :: Maybe (ExternalId)
   , "SubscriptionType" :: (SubscriptionType)
-  , "ClientToken" :: NullOrUndefined (ClientToken)
-  , "SyslogIp" :: NullOrUndefined (IpAddress)
+  , "ClientToken" :: Maybe (ClientToken)
+  , "SyslogIp" :: Maybe (IpAddress)
   }
 derive instance newtypeCreateHsmRequest :: Newtype CreateHsmRequest _
 derive instance repGenericCreateHsmRequest :: Generic CreateHsmRequest _
@@ -242,18 +241,18 @@ instance encodeCreateHsmRequest :: Encode CreateHsmRequest where encode = generi
 
 -- | Constructs CreateHsmRequest from required parameters
 newCreateHsmRequest :: IamRoleArn -> SshKey -> SubnetId -> SubscriptionType -> CreateHsmRequest
-newCreateHsmRequest _IamRoleArn _SshKey _SubnetId _SubscriptionType = CreateHsmRequest { "IamRoleArn": _IamRoleArn, "SshKey": _SshKey, "SubnetId": _SubnetId, "SubscriptionType": _SubscriptionType, "ClientToken": (NullOrUndefined Nothing), "EniIp": (NullOrUndefined Nothing), "ExternalId": (NullOrUndefined Nothing), "SyslogIp": (NullOrUndefined Nothing) }
+newCreateHsmRequest _IamRoleArn _SshKey _SubnetId _SubscriptionType = CreateHsmRequest { "IamRoleArn": _IamRoleArn, "SshKey": _SshKey, "SubnetId": _SubnetId, "SubscriptionType": _SubscriptionType, "ClientToken": Nothing, "EniIp": Nothing, "ExternalId": Nothing, "SyslogIp": Nothing }
 
 -- | Constructs CreateHsmRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateHsmRequest' :: IamRoleArn -> SshKey -> SubnetId -> SubscriptionType -> ( { "SubnetId" :: (SubnetId) , "SshKey" :: (SshKey) , "EniIp" :: NullOrUndefined (IpAddress) , "IamRoleArn" :: (IamRoleArn) , "ExternalId" :: NullOrUndefined (ExternalId) , "SubscriptionType" :: (SubscriptionType) , "ClientToken" :: NullOrUndefined (ClientToken) , "SyslogIp" :: NullOrUndefined (IpAddress) } -> {"SubnetId" :: (SubnetId) , "SshKey" :: (SshKey) , "EniIp" :: NullOrUndefined (IpAddress) , "IamRoleArn" :: (IamRoleArn) , "ExternalId" :: NullOrUndefined (ExternalId) , "SubscriptionType" :: (SubscriptionType) , "ClientToken" :: NullOrUndefined (ClientToken) , "SyslogIp" :: NullOrUndefined (IpAddress) } ) -> CreateHsmRequest
-newCreateHsmRequest' _IamRoleArn _SshKey _SubnetId _SubscriptionType customize = (CreateHsmRequest <<< customize) { "IamRoleArn": _IamRoleArn, "SshKey": _SshKey, "SubnetId": _SubnetId, "SubscriptionType": _SubscriptionType, "ClientToken": (NullOrUndefined Nothing), "EniIp": (NullOrUndefined Nothing), "ExternalId": (NullOrUndefined Nothing), "SyslogIp": (NullOrUndefined Nothing) }
+newCreateHsmRequest' :: IamRoleArn -> SshKey -> SubnetId -> SubscriptionType -> ( { "SubnetId" :: (SubnetId) , "SshKey" :: (SshKey) , "EniIp" :: Maybe (IpAddress) , "IamRoleArn" :: (IamRoleArn) , "ExternalId" :: Maybe (ExternalId) , "SubscriptionType" :: (SubscriptionType) , "ClientToken" :: Maybe (ClientToken) , "SyslogIp" :: Maybe (IpAddress) } -> {"SubnetId" :: (SubnetId) , "SshKey" :: (SshKey) , "EniIp" :: Maybe (IpAddress) , "IamRoleArn" :: (IamRoleArn) , "ExternalId" :: Maybe (ExternalId) , "SubscriptionType" :: (SubscriptionType) , "ClientToken" :: Maybe (ClientToken) , "SyslogIp" :: Maybe (IpAddress) } ) -> CreateHsmRequest
+newCreateHsmRequest' _IamRoleArn _SshKey _SubnetId _SubscriptionType customize = (CreateHsmRequest <<< customize) { "IamRoleArn": _IamRoleArn, "SshKey": _SshKey, "SubnetId": _SubnetId, "SubscriptionType": _SubscriptionType, "ClientToken": Nothing, "EniIp": Nothing, "ExternalId": Nothing, "SyslogIp": Nothing }
 
 
 
 -- | <p>Contains the output of the <code>CreateHsm</code> operation.</p>
 newtype CreateHsmResponse = CreateHsmResponse 
-  { "HsmArn" :: NullOrUndefined (HsmArn)
+  { "HsmArn" :: Maybe (HsmArn)
   }
 derive instance newtypeCreateHsmResponse :: Newtype CreateHsmResponse _
 derive instance repGenericCreateHsmResponse :: Generic CreateHsmResponse _
@@ -263,18 +262,18 @@ instance encodeCreateHsmResponse :: Encode CreateHsmResponse where encode = gene
 
 -- | Constructs CreateHsmResponse from required parameters
 newCreateHsmResponse :: CreateHsmResponse
-newCreateHsmResponse  = CreateHsmResponse { "HsmArn": (NullOrUndefined Nothing) }
+newCreateHsmResponse  = CreateHsmResponse { "HsmArn": Nothing }
 
 -- | Constructs CreateHsmResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateHsmResponse' :: ( { "HsmArn" :: NullOrUndefined (HsmArn) } -> {"HsmArn" :: NullOrUndefined (HsmArn) } ) -> CreateHsmResponse
-newCreateHsmResponse'  customize = (CreateHsmResponse <<< customize) { "HsmArn": (NullOrUndefined Nothing) }
+newCreateHsmResponse' :: ( { "HsmArn" :: Maybe (HsmArn) } -> {"HsmArn" :: Maybe (HsmArn) } ) -> CreateHsmResponse
+newCreateHsmResponse'  customize = (CreateHsmResponse <<< customize) { "HsmArn": Nothing }
 
 
 
 -- | <p>Contains the inputs for the <a>CreateLunaClient</a> action.</p>
 newtype CreateLunaClientRequest = CreateLunaClientRequest 
-  { "Label" :: NullOrUndefined (ClientLabel)
+  { "Label" :: Maybe (ClientLabel)
   , "Certificate" :: (Certificate)
   }
 derive instance newtypeCreateLunaClientRequest :: Newtype CreateLunaClientRequest _
@@ -285,18 +284,18 @@ instance encodeCreateLunaClientRequest :: Encode CreateLunaClientRequest where e
 
 -- | Constructs CreateLunaClientRequest from required parameters
 newCreateLunaClientRequest :: Certificate -> CreateLunaClientRequest
-newCreateLunaClientRequest _Certificate = CreateLunaClientRequest { "Certificate": _Certificate, "Label": (NullOrUndefined Nothing) }
+newCreateLunaClientRequest _Certificate = CreateLunaClientRequest { "Certificate": _Certificate, "Label": Nothing }
 
 -- | Constructs CreateLunaClientRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateLunaClientRequest' :: Certificate -> ( { "Label" :: NullOrUndefined (ClientLabel) , "Certificate" :: (Certificate) } -> {"Label" :: NullOrUndefined (ClientLabel) , "Certificate" :: (Certificate) } ) -> CreateLunaClientRequest
-newCreateLunaClientRequest' _Certificate customize = (CreateLunaClientRequest <<< customize) { "Certificate": _Certificate, "Label": (NullOrUndefined Nothing) }
+newCreateLunaClientRequest' :: Certificate -> ( { "Label" :: Maybe (ClientLabel) , "Certificate" :: (Certificate) } -> {"Label" :: Maybe (ClientLabel) , "Certificate" :: (Certificate) } ) -> CreateLunaClientRequest
+newCreateLunaClientRequest' _Certificate customize = (CreateLunaClientRequest <<< customize) { "Certificate": _Certificate, "Label": Nothing }
 
 
 
 -- | <p>Contains the output of the <a>CreateLunaClient</a> action.</p>
 newtype CreateLunaClientResponse = CreateLunaClientResponse 
-  { "ClientArn" :: NullOrUndefined (ClientArn)
+  { "ClientArn" :: Maybe (ClientArn)
   }
 derive instance newtypeCreateLunaClientResponse :: Newtype CreateLunaClientResponse _
 derive instance repGenericCreateLunaClientResponse :: Generic CreateLunaClientResponse _
@@ -306,12 +305,12 @@ instance encodeCreateLunaClientResponse :: Encode CreateLunaClientResponse where
 
 -- | Constructs CreateLunaClientResponse from required parameters
 newCreateLunaClientResponse :: CreateLunaClientResponse
-newCreateLunaClientResponse  = CreateLunaClientResponse { "ClientArn": (NullOrUndefined Nothing) }
+newCreateLunaClientResponse  = CreateLunaClientResponse { "ClientArn": Nothing }
 
 -- | Constructs CreateLunaClientResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateLunaClientResponse' :: ( { "ClientArn" :: NullOrUndefined (ClientArn) } -> {"ClientArn" :: NullOrUndefined (ClientArn) } ) -> CreateLunaClientResponse
-newCreateLunaClientResponse'  customize = (CreateLunaClientResponse <<< customize) { "ClientArn": (NullOrUndefined Nothing) }
+newCreateLunaClientResponse' :: ( { "ClientArn" :: Maybe (ClientArn) } -> {"ClientArn" :: Maybe (ClientArn) } ) -> CreateLunaClientResponse
+newCreateLunaClientResponse'  customize = (CreateLunaClientResponse <<< customize) { "ClientArn": Nothing }
 
 
 
@@ -462,15 +461,15 @@ newDescribeHapgRequest' _HapgArn customize = (DescribeHapgRequest <<< customize)
 
 -- | <p>Contains the output of the <a>DescribeHapg</a> action.</p>
 newtype DescribeHapgResponse = DescribeHapgResponse 
-  { "HapgArn" :: NullOrUndefined (HapgArn)
-  , "HapgSerial" :: NullOrUndefined (String)
-  , "HsmsLastActionFailed" :: NullOrUndefined (HsmList)
-  , "HsmsPendingDeletion" :: NullOrUndefined (HsmList)
-  , "HsmsPendingRegistration" :: NullOrUndefined (HsmList)
-  , "Label" :: NullOrUndefined (Label)
-  , "LastModifiedTimestamp" :: NullOrUndefined (Types.Timestamp)
-  , "PartitionSerialList" :: NullOrUndefined (PartitionSerialList)
-  , "State" :: NullOrUndefined (CloudHsmObjectState)
+  { "HapgArn" :: Maybe (HapgArn)
+  , "HapgSerial" :: Maybe (String)
+  , "HsmsLastActionFailed" :: Maybe (HsmList)
+  , "HsmsPendingDeletion" :: Maybe (HsmList)
+  , "HsmsPendingRegistration" :: Maybe (HsmList)
+  , "Label" :: Maybe (Label)
+  , "LastModifiedTimestamp" :: Maybe (Types.Timestamp)
+  , "PartitionSerialList" :: Maybe (PartitionSerialList)
+  , "State" :: Maybe (CloudHsmObjectState)
   }
 derive instance newtypeDescribeHapgResponse :: Newtype DescribeHapgResponse _
 derive instance repGenericDescribeHapgResponse :: Generic DescribeHapgResponse _
@@ -480,19 +479,19 @@ instance encodeDescribeHapgResponse :: Encode DescribeHapgResponse where encode 
 
 -- | Constructs DescribeHapgResponse from required parameters
 newDescribeHapgResponse :: DescribeHapgResponse
-newDescribeHapgResponse  = DescribeHapgResponse { "HapgArn": (NullOrUndefined Nothing), "HapgSerial": (NullOrUndefined Nothing), "HsmsLastActionFailed": (NullOrUndefined Nothing), "HsmsPendingDeletion": (NullOrUndefined Nothing), "HsmsPendingRegistration": (NullOrUndefined Nothing), "Label": (NullOrUndefined Nothing), "LastModifiedTimestamp": (NullOrUndefined Nothing), "PartitionSerialList": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newDescribeHapgResponse  = DescribeHapgResponse { "HapgArn": Nothing, "HapgSerial": Nothing, "HsmsLastActionFailed": Nothing, "HsmsPendingDeletion": Nothing, "HsmsPendingRegistration": Nothing, "Label": Nothing, "LastModifiedTimestamp": Nothing, "PartitionSerialList": Nothing, "State": Nothing }
 
 -- | Constructs DescribeHapgResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeHapgResponse' :: ( { "HapgArn" :: NullOrUndefined (HapgArn) , "HapgSerial" :: NullOrUndefined (String) , "HsmsLastActionFailed" :: NullOrUndefined (HsmList) , "HsmsPendingDeletion" :: NullOrUndefined (HsmList) , "HsmsPendingRegistration" :: NullOrUndefined (HsmList) , "Label" :: NullOrUndefined (Label) , "LastModifiedTimestamp" :: NullOrUndefined (Types.Timestamp) , "PartitionSerialList" :: NullOrUndefined (PartitionSerialList) , "State" :: NullOrUndefined (CloudHsmObjectState) } -> {"HapgArn" :: NullOrUndefined (HapgArn) , "HapgSerial" :: NullOrUndefined (String) , "HsmsLastActionFailed" :: NullOrUndefined (HsmList) , "HsmsPendingDeletion" :: NullOrUndefined (HsmList) , "HsmsPendingRegistration" :: NullOrUndefined (HsmList) , "Label" :: NullOrUndefined (Label) , "LastModifiedTimestamp" :: NullOrUndefined (Types.Timestamp) , "PartitionSerialList" :: NullOrUndefined (PartitionSerialList) , "State" :: NullOrUndefined (CloudHsmObjectState) } ) -> DescribeHapgResponse
-newDescribeHapgResponse'  customize = (DescribeHapgResponse <<< customize) { "HapgArn": (NullOrUndefined Nothing), "HapgSerial": (NullOrUndefined Nothing), "HsmsLastActionFailed": (NullOrUndefined Nothing), "HsmsPendingDeletion": (NullOrUndefined Nothing), "HsmsPendingRegistration": (NullOrUndefined Nothing), "Label": (NullOrUndefined Nothing), "LastModifiedTimestamp": (NullOrUndefined Nothing), "PartitionSerialList": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newDescribeHapgResponse' :: ( { "HapgArn" :: Maybe (HapgArn) , "HapgSerial" :: Maybe (String) , "HsmsLastActionFailed" :: Maybe (HsmList) , "HsmsPendingDeletion" :: Maybe (HsmList) , "HsmsPendingRegistration" :: Maybe (HsmList) , "Label" :: Maybe (Label) , "LastModifiedTimestamp" :: Maybe (Types.Timestamp) , "PartitionSerialList" :: Maybe (PartitionSerialList) , "State" :: Maybe (CloudHsmObjectState) } -> {"HapgArn" :: Maybe (HapgArn) , "HapgSerial" :: Maybe (String) , "HsmsLastActionFailed" :: Maybe (HsmList) , "HsmsPendingDeletion" :: Maybe (HsmList) , "HsmsPendingRegistration" :: Maybe (HsmList) , "Label" :: Maybe (Label) , "LastModifiedTimestamp" :: Maybe (Types.Timestamp) , "PartitionSerialList" :: Maybe (PartitionSerialList) , "State" :: Maybe (CloudHsmObjectState) } ) -> DescribeHapgResponse
+newDescribeHapgResponse'  customize = (DescribeHapgResponse <<< customize) { "HapgArn": Nothing, "HapgSerial": Nothing, "HsmsLastActionFailed": Nothing, "HsmsPendingDeletion": Nothing, "HsmsPendingRegistration": Nothing, "Label": Nothing, "LastModifiedTimestamp": Nothing, "PartitionSerialList": Nothing, "State": Nothing }
 
 
 
 -- | <p>Contains the inputs for the <a>DescribeHsm</a> operation.</p>
 newtype DescribeHsmRequest = DescribeHsmRequest 
-  { "HsmArn" :: NullOrUndefined (HsmArn)
-  , "HsmSerialNumber" :: NullOrUndefined (HsmSerialNumber)
+  { "HsmArn" :: Maybe (HsmArn)
+  , "HsmSerialNumber" :: Maybe (HsmSerialNumber)
   }
 derive instance newtypeDescribeHsmRequest :: Newtype DescribeHsmRequest _
 derive instance repGenericDescribeHsmRequest :: Generic DescribeHsmRequest _
@@ -502,38 +501,38 @@ instance encodeDescribeHsmRequest :: Encode DescribeHsmRequest where encode = ge
 
 -- | Constructs DescribeHsmRequest from required parameters
 newDescribeHsmRequest :: DescribeHsmRequest
-newDescribeHsmRequest  = DescribeHsmRequest { "HsmArn": (NullOrUndefined Nothing), "HsmSerialNumber": (NullOrUndefined Nothing) }
+newDescribeHsmRequest  = DescribeHsmRequest { "HsmArn": Nothing, "HsmSerialNumber": Nothing }
 
 -- | Constructs DescribeHsmRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeHsmRequest' :: ( { "HsmArn" :: NullOrUndefined (HsmArn) , "HsmSerialNumber" :: NullOrUndefined (HsmSerialNumber) } -> {"HsmArn" :: NullOrUndefined (HsmArn) , "HsmSerialNumber" :: NullOrUndefined (HsmSerialNumber) } ) -> DescribeHsmRequest
-newDescribeHsmRequest'  customize = (DescribeHsmRequest <<< customize) { "HsmArn": (NullOrUndefined Nothing), "HsmSerialNumber": (NullOrUndefined Nothing) }
+newDescribeHsmRequest' :: ( { "HsmArn" :: Maybe (HsmArn) , "HsmSerialNumber" :: Maybe (HsmSerialNumber) } -> {"HsmArn" :: Maybe (HsmArn) , "HsmSerialNumber" :: Maybe (HsmSerialNumber) } ) -> DescribeHsmRequest
+newDescribeHsmRequest'  customize = (DescribeHsmRequest <<< customize) { "HsmArn": Nothing, "HsmSerialNumber": Nothing }
 
 
 
 -- | <p>Contains the output of the <a>DescribeHsm</a> operation.</p>
 newtype DescribeHsmResponse = DescribeHsmResponse 
-  { "HsmArn" :: NullOrUndefined (HsmArn)
-  , "Status" :: NullOrUndefined (HsmStatus)
-  , "StatusDetails" :: NullOrUndefined (String)
-  , "AvailabilityZone" :: NullOrUndefined (AZ)
-  , "EniId" :: NullOrUndefined (EniId)
-  , "EniIp" :: NullOrUndefined (IpAddress)
-  , "SubscriptionType" :: NullOrUndefined (SubscriptionType)
-  , "SubscriptionStartDate" :: NullOrUndefined (Types.Timestamp)
-  , "SubscriptionEndDate" :: NullOrUndefined (Types.Timestamp)
-  , "VpcId" :: NullOrUndefined (VpcId)
-  , "SubnetId" :: NullOrUndefined (SubnetId)
-  , "IamRoleArn" :: NullOrUndefined (IamRoleArn)
-  , "SerialNumber" :: NullOrUndefined (HsmSerialNumber)
-  , "VendorName" :: NullOrUndefined (String)
-  , "HsmType" :: NullOrUndefined (String)
-  , "SoftwareVersion" :: NullOrUndefined (String)
-  , "SshPublicKey" :: NullOrUndefined (SshKey)
-  , "SshKeyLastUpdated" :: NullOrUndefined (Types.Timestamp)
-  , "ServerCertUri" :: NullOrUndefined (String)
-  , "ServerCertLastUpdated" :: NullOrUndefined (Types.Timestamp)
-  , "Partitions" :: NullOrUndefined (PartitionList)
+  { "HsmArn" :: Maybe (HsmArn)
+  , "Status" :: Maybe (HsmStatus)
+  , "StatusDetails" :: Maybe (String)
+  , "AvailabilityZone" :: Maybe (AZ)
+  , "EniId" :: Maybe (EniId)
+  , "EniIp" :: Maybe (IpAddress)
+  , "SubscriptionType" :: Maybe (SubscriptionType)
+  , "SubscriptionStartDate" :: Maybe (Types.Timestamp)
+  , "SubscriptionEndDate" :: Maybe (Types.Timestamp)
+  , "VpcId" :: Maybe (VpcId)
+  , "SubnetId" :: Maybe (SubnetId)
+  , "IamRoleArn" :: Maybe (IamRoleArn)
+  , "SerialNumber" :: Maybe (HsmSerialNumber)
+  , "VendorName" :: Maybe (String)
+  , "HsmType" :: Maybe (String)
+  , "SoftwareVersion" :: Maybe (String)
+  , "SshPublicKey" :: Maybe (SshKey)
+  , "SshKeyLastUpdated" :: Maybe (Types.Timestamp)
+  , "ServerCertUri" :: Maybe (String)
+  , "ServerCertLastUpdated" :: Maybe (Types.Timestamp)
+  , "Partitions" :: Maybe (PartitionList)
   }
 derive instance newtypeDescribeHsmResponse :: Newtype DescribeHsmResponse _
 derive instance repGenericDescribeHsmResponse :: Generic DescribeHsmResponse _
@@ -543,18 +542,18 @@ instance encodeDescribeHsmResponse :: Encode DescribeHsmResponse where encode = 
 
 -- | Constructs DescribeHsmResponse from required parameters
 newDescribeHsmResponse :: DescribeHsmResponse
-newDescribeHsmResponse  = DescribeHsmResponse { "AvailabilityZone": (NullOrUndefined Nothing), "EniId": (NullOrUndefined Nothing), "EniIp": (NullOrUndefined Nothing), "HsmArn": (NullOrUndefined Nothing), "HsmType": (NullOrUndefined Nothing), "IamRoleArn": (NullOrUndefined Nothing), "Partitions": (NullOrUndefined Nothing), "SerialNumber": (NullOrUndefined Nothing), "ServerCertLastUpdated": (NullOrUndefined Nothing), "ServerCertUri": (NullOrUndefined Nothing), "SoftwareVersion": (NullOrUndefined Nothing), "SshKeyLastUpdated": (NullOrUndefined Nothing), "SshPublicKey": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing), "SubscriptionEndDate": (NullOrUndefined Nothing), "SubscriptionStartDate": (NullOrUndefined Nothing), "SubscriptionType": (NullOrUndefined Nothing), "VendorName": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newDescribeHsmResponse  = DescribeHsmResponse { "AvailabilityZone": Nothing, "EniId": Nothing, "EniIp": Nothing, "HsmArn": Nothing, "HsmType": Nothing, "IamRoleArn": Nothing, "Partitions": Nothing, "SerialNumber": Nothing, "ServerCertLastUpdated": Nothing, "ServerCertUri": Nothing, "SoftwareVersion": Nothing, "SshKeyLastUpdated": Nothing, "SshPublicKey": Nothing, "Status": Nothing, "StatusDetails": Nothing, "SubnetId": Nothing, "SubscriptionEndDate": Nothing, "SubscriptionStartDate": Nothing, "SubscriptionType": Nothing, "VendorName": Nothing, "VpcId": Nothing }
 
 -- | Constructs DescribeHsmResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeHsmResponse' :: ( { "HsmArn" :: NullOrUndefined (HsmArn) , "Status" :: NullOrUndefined (HsmStatus) , "StatusDetails" :: NullOrUndefined (String) , "AvailabilityZone" :: NullOrUndefined (AZ) , "EniId" :: NullOrUndefined (EniId) , "EniIp" :: NullOrUndefined (IpAddress) , "SubscriptionType" :: NullOrUndefined (SubscriptionType) , "SubscriptionStartDate" :: NullOrUndefined (Types.Timestamp) , "SubscriptionEndDate" :: NullOrUndefined (Types.Timestamp) , "VpcId" :: NullOrUndefined (VpcId) , "SubnetId" :: NullOrUndefined (SubnetId) , "IamRoleArn" :: NullOrUndefined (IamRoleArn) , "SerialNumber" :: NullOrUndefined (HsmSerialNumber) , "VendorName" :: NullOrUndefined (String) , "HsmType" :: NullOrUndefined (String) , "SoftwareVersion" :: NullOrUndefined (String) , "SshPublicKey" :: NullOrUndefined (SshKey) , "SshKeyLastUpdated" :: NullOrUndefined (Types.Timestamp) , "ServerCertUri" :: NullOrUndefined (String) , "ServerCertLastUpdated" :: NullOrUndefined (Types.Timestamp) , "Partitions" :: NullOrUndefined (PartitionList) } -> {"HsmArn" :: NullOrUndefined (HsmArn) , "Status" :: NullOrUndefined (HsmStatus) , "StatusDetails" :: NullOrUndefined (String) , "AvailabilityZone" :: NullOrUndefined (AZ) , "EniId" :: NullOrUndefined (EniId) , "EniIp" :: NullOrUndefined (IpAddress) , "SubscriptionType" :: NullOrUndefined (SubscriptionType) , "SubscriptionStartDate" :: NullOrUndefined (Types.Timestamp) , "SubscriptionEndDate" :: NullOrUndefined (Types.Timestamp) , "VpcId" :: NullOrUndefined (VpcId) , "SubnetId" :: NullOrUndefined (SubnetId) , "IamRoleArn" :: NullOrUndefined (IamRoleArn) , "SerialNumber" :: NullOrUndefined (HsmSerialNumber) , "VendorName" :: NullOrUndefined (String) , "HsmType" :: NullOrUndefined (String) , "SoftwareVersion" :: NullOrUndefined (String) , "SshPublicKey" :: NullOrUndefined (SshKey) , "SshKeyLastUpdated" :: NullOrUndefined (Types.Timestamp) , "ServerCertUri" :: NullOrUndefined (String) , "ServerCertLastUpdated" :: NullOrUndefined (Types.Timestamp) , "Partitions" :: NullOrUndefined (PartitionList) } ) -> DescribeHsmResponse
-newDescribeHsmResponse'  customize = (DescribeHsmResponse <<< customize) { "AvailabilityZone": (NullOrUndefined Nothing), "EniId": (NullOrUndefined Nothing), "EniIp": (NullOrUndefined Nothing), "HsmArn": (NullOrUndefined Nothing), "HsmType": (NullOrUndefined Nothing), "IamRoleArn": (NullOrUndefined Nothing), "Partitions": (NullOrUndefined Nothing), "SerialNumber": (NullOrUndefined Nothing), "ServerCertLastUpdated": (NullOrUndefined Nothing), "ServerCertUri": (NullOrUndefined Nothing), "SoftwareVersion": (NullOrUndefined Nothing), "SshKeyLastUpdated": (NullOrUndefined Nothing), "SshPublicKey": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing), "SubscriptionEndDate": (NullOrUndefined Nothing), "SubscriptionStartDate": (NullOrUndefined Nothing), "SubscriptionType": (NullOrUndefined Nothing), "VendorName": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newDescribeHsmResponse' :: ( { "HsmArn" :: Maybe (HsmArn) , "Status" :: Maybe (HsmStatus) , "StatusDetails" :: Maybe (String) , "AvailabilityZone" :: Maybe (AZ) , "EniId" :: Maybe (EniId) , "EniIp" :: Maybe (IpAddress) , "SubscriptionType" :: Maybe (SubscriptionType) , "SubscriptionStartDate" :: Maybe (Types.Timestamp) , "SubscriptionEndDate" :: Maybe (Types.Timestamp) , "VpcId" :: Maybe (VpcId) , "SubnetId" :: Maybe (SubnetId) , "IamRoleArn" :: Maybe (IamRoleArn) , "SerialNumber" :: Maybe (HsmSerialNumber) , "VendorName" :: Maybe (String) , "HsmType" :: Maybe (String) , "SoftwareVersion" :: Maybe (String) , "SshPublicKey" :: Maybe (SshKey) , "SshKeyLastUpdated" :: Maybe (Types.Timestamp) , "ServerCertUri" :: Maybe (String) , "ServerCertLastUpdated" :: Maybe (Types.Timestamp) , "Partitions" :: Maybe (PartitionList) } -> {"HsmArn" :: Maybe (HsmArn) , "Status" :: Maybe (HsmStatus) , "StatusDetails" :: Maybe (String) , "AvailabilityZone" :: Maybe (AZ) , "EniId" :: Maybe (EniId) , "EniIp" :: Maybe (IpAddress) , "SubscriptionType" :: Maybe (SubscriptionType) , "SubscriptionStartDate" :: Maybe (Types.Timestamp) , "SubscriptionEndDate" :: Maybe (Types.Timestamp) , "VpcId" :: Maybe (VpcId) , "SubnetId" :: Maybe (SubnetId) , "IamRoleArn" :: Maybe (IamRoleArn) , "SerialNumber" :: Maybe (HsmSerialNumber) , "VendorName" :: Maybe (String) , "HsmType" :: Maybe (String) , "SoftwareVersion" :: Maybe (String) , "SshPublicKey" :: Maybe (SshKey) , "SshKeyLastUpdated" :: Maybe (Types.Timestamp) , "ServerCertUri" :: Maybe (String) , "ServerCertLastUpdated" :: Maybe (Types.Timestamp) , "Partitions" :: Maybe (PartitionList) } ) -> DescribeHsmResponse
+newDescribeHsmResponse'  customize = (DescribeHsmResponse <<< customize) { "AvailabilityZone": Nothing, "EniId": Nothing, "EniIp": Nothing, "HsmArn": Nothing, "HsmType": Nothing, "IamRoleArn": Nothing, "Partitions": Nothing, "SerialNumber": Nothing, "ServerCertLastUpdated": Nothing, "ServerCertUri": Nothing, "SoftwareVersion": Nothing, "SshKeyLastUpdated": Nothing, "SshPublicKey": Nothing, "Status": Nothing, "StatusDetails": Nothing, "SubnetId": Nothing, "SubscriptionEndDate": Nothing, "SubscriptionStartDate": Nothing, "SubscriptionType": Nothing, "VendorName": Nothing, "VpcId": Nothing }
 
 
 
 newtype DescribeLunaClientRequest = DescribeLunaClientRequest 
-  { "ClientArn" :: NullOrUndefined (ClientArn)
-  , "CertificateFingerprint" :: NullOrUndefined (CertificateFingerprint)
+  { "ClientArn" :: Maybe (ClientArn)
+  , "CertificateFingerprint" :: Maybe (CertificateFingerprint)
   }
 derive instance newtypeDescribeLunaClientRequest :: Newtype DescribeLunaClientRequest _
 derive instance repGenericDescribeLunaClientRequest :: Generic DescribeLunaClientRequest _
@@ -564,21 +563,21 @@ instance encodeDescribeLunaClientRequest :: Encode DescribeLunaClientRequest whe
 
 -- | Constructs DescribeLunaClientRequest from required parameters
 newDescribeLunaClientRequest :: DescribeLunaClientRequest
-newDescribeLunaClientRequest  = DescribeLunaClientRequest { "CertificateFingerprint": (NullOrUndefined Nothing), "ClientArn": (NullOrUndefined Nothing) }
+newDescribeLunaClientRequest  = DescribeLunaClientRequest { "CertificateFingerprint": Nothing, "ClientArn": Nothing }
 
 -- | Constructs DescribeLunaClientRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeLunaClientRequest' :: ( { "ClientArn" :: NullOrUndefined (ClientArn) , "CertificateFingerprint" :: NullOrUndefined (CertificateFingerprint) } -> {"ClientArn" :: NullOrUndefined (ClientArn) , "CertificateFingerprint" :: NullOrUndefined (CertificateFingerprint) } ) -> DescribeLunaClientRequest
-newDescribeLunaClientRequest'  customize = (DescribeLunaClientRequest <<< customize) { "CertificateFingerprint": (NullOrUndefined Nothing), "ClientArn": (NullOrUndefined Nothing) }
+newDescribeLunaClientRequest' :: ( { "ClientArn" :: Maybe (ClientArn) , "CertificateFingerprint" :: Maybe (CertificateFingerprint) } -> {"ClientArn" :: Maybe (ClientArn) , "CertificateFingerprint" :: Maybe (CertificateFingerprint) } ) -> DescribeLunaClientRequest
+newDescribeLunaClientRequest'  customize = (DescribeLunaClientRequest <<< customize) { "CertificateFingerprint": Nothing, "ClientArn": Nothing }
 
 
 
 newtype DescribeLunaClientResponse = DescribeLunaClientResponse 
-  { "ClientArn" :: NullOrUndefined (ClientArn)
-  , "Certificate" :: NullOrUndefined (Certificate)
-  , "CertificateFingerprint" :: NullOrUndefined (CertificateFingerprint)
-  , "LastModifiedTimestamp" :: NullOrUndefined (Types.Timestamp)
-  , "Label" :: NullOrUndefined (Label)
+  { "ClientArn" :: Maybe (ClientArn)
+  , "Certificate" :: Maybe (Certificate)
+  , "CertificateFingerprint" :: Maybe (CertificateFingerprint)
+  , "LastModifiedTimestamp" :: Maybe (Types.Timestamp)
+  , "Label" :: Maybe (Label)
   }
 derive instance newtypeDescribeLunaClientResponse :: Newtype DescribeLunaClientResponse _
 derive instance repGenericDescribeLunaClientResponse :: Generic DescribeLunaClientResponse _
@@ -588,12 +587,12 @@ instance encodeDescribeLunaClientResponse :: Encode DescribeLunaClientResponse w
 
 -- | Constructs DescribeLunaClientResponse from required parameters
 newDescribeLunaClientResponse :: DescribeLunaClientResponse
-newDescribeLunaClientResponse  = DescribeLunaClientResponse { "Certificate": (NullOrUndefined Nothing), "CertificateFingerprint": (NullOrUndefined Nothing), "ClientArn": (NullOrUndefined Nothing), "Label": (NullOrUndefined Nothing), "LastModifiedTimestamp": (NullOrUndefined Nothing) }
+newDescribeLunaClientResponse  = DescribeLunaClientResponse { "Certificate": Nothing, "CertificateFingerprint": Nothing, "ClientArn": Nothing, "Label": Nothing, "LastModifiedTimestamp": Nothing }
 
 -- | Constructs DescribeLunaClientResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeLunaClientResponse' :: ( { "ClientArn" :: NullOrUndefined (ClientArn) , "Certificate" :: NullOrUndefined (Certificate) , "CertificateFingerprint" :: NullOrUndefined (CertificateFingerprint) , "LastModifiedTimestamp" :: NullOrUndefined (Types.Timestamp) , "Label" :: NullOrUndefined (Label) } -> {"ClientArn" :: NullOrUndefined (ClientArn) , "Certificate" :: NullOrUndefined (Certificate) , "CertificateFingerprint" :: NullOrUndefined (CertificateFingerprint) , "LastModifiedTimestamp" :: NullOrUndefined (Types.Timestamp) , "Label" :: NullOrUndefined (Label) } ) -> DescribeLunaClientResponse
-newDescribeLunaClientResponse'  customize = (DescribeLunaClientResponse <<< customize) { "Certificate": (NullOrUndefined Nothing), "CertificateFingerprint": (NullOrUndefined Nothing), "ClientArn": (NullOrUndefined Nothing), "Label": (NullOrUndefined Nothing), "LastModifiedTimestamp": (NullOrUndefined Nothing) }
+newDescribeLunaClientResponse' :: ( { "ClientArn" :: Maybe (ClientArn) , "Certificate" :: Maybe (Certificate) , "CertificateFingerprint" :: Maybe (CertificateFingerprint) , "LastModifiedTimestamp" :: Maybe (Types.Timestamp) , "Label" :: Maybe (Label) } -> {"ClientArn" :: Maybe (ClientArn) , "Certificate" :: Maybe (Certificate) , "CertificateFingerprint" :: Maybe (CertificateFingerprint) , "LastModifiedTimestamp" :: Maybe (Types.Timestamp) , "Label" :: Maybe (Label) } ) -> DescribeLunaClientResponse
+newDescribeLunaClientResponse'  customize = (DescribeLunaClientResponse <<< customize) { "Certificate": Nothing, "CertificateFingerprint": Nothing, "ClientArn": Nothing, "Label": Nothing, "LastModifiedTimestamp": Nothing }
 
 
 
@@ -638,9 +637,9 @@ newGetConfigRequest' _ClientArn _ClientVersion _HapgList customize = (GetConfigR
 
 
 newtype GetConfigResponse = GetConfigResponse 
-  { "ConfigType" :: NullOrUndefined (String)
-  , "ConfigFile" :: NullOrUndefined (String)
-  , "ConfigCred" :: NullOrUndefined (String)
+  { "ConfigType" :: Maybe (String)
+  , "ConfigFile" :: Maybe (String)
+  , "ConfigCred" :: Maybe (String)
   }
 derive instance newtypeGetConfigResponse :: Newtype GetConfigResponse _
 derive instance repGenericGetConfigResponse :: Generic GetConfigResponse _
@@ -650,12 +649,12 @@ instance encodeGetConfigResponse :: Encode GetConfigResponse where encode = gene
 
 -- | Constructs GetConfigResponse from required parameters
 newGetConfigResponse :: GetConfigResponse
-newGetConfigResponse  = GetConfigResponse { "ConfigCred": (NullOrUndefined Nothing), "ConfigFile": (NullOrUndefined Nothing), "ConfigType": (NullOrUndefined Nothing) }
+newGetConfigResponse  = GetConfigResponse { "ConfigCred": Nothing, "ConfigFile": Nothing, "ConfigType": Nothing }
 
 -- | Constructs GetConfigResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetConfigResponse' :: ( { "ConfigType" :: NullOrUndefined (String) , "ConfigFile" :: NullOrUndefined (String) , "ConfigCred" :: NullOrUndefined (String) } -> {"ConfigType" :: NullOrUndefined (String) , "ConfigFile" :: NullOrUndefined (String) , "ConfigCred" :: NullOrUndefined (String) } ) -> GetConfigResponse
-newGetConfigResponse'  customize = (GetConfigResponse <<< customize) { "ConfigCred": (NullOrUndefined Nothing), "ConfigFile": (NullOrUndefined Nothing), "ConfigType": (NullOrUndefined Nothing) }
+newGetConfigResponse' :: ( { "ConfigType" :: Maybe (String) , "ConfigFile" :: Maybe (String) , "ConfigCred" :: Maybe (String) } -> {"ConfigType" :: Maybe (String) , "ConfigFile" :: Maybe (String) , "ConfigCred" :: Maybe (String) } ) -> GetConfigResponse
+newGetConfigResponse'  customize = (GetConfigResponse <<< customize) { "ConfigCred": Nothing, "ConfigFile": Nothing, "ConfigType": Nothing }
 
 
 
@@ -763,7 +762,7 @@ instance encodeListAvailableZonesRequest :: Encode ListAvailableZonesRequest whe
 
 
 newtype ListAvailableZonesResponse = ListAvailableZonesResponse 
-  { "AZList" :: NullOrUndefined (AZList)
+  { "AZList" :: Maybe (AZList)
   }
 derive instance newtypeListAvailableZonesResponse :: Newtype ListAvailableZonesResponse _
 derive instance repGenericListAvailableZonesResponse :: Generic ListAvailableZonesResponse _
@@ -773,17 +772,17 @@ instance encodeListAvailableZonesResponse :: Encode ListAvailableZonesResponse w
 
 -- | Constructs ListAvailableZonesResponse from required parameters
 newListAvailableZonesResponse :: ListAvailableZonesResponse
-newListAvailableZonesResponse  = ListAvailableZonesResponse { "AZList": (NullOrUndefined Nothing) }
+newListAvailableZonesResponse  = ListAvailableZonesResponse { "AZList": Nothing }
 
 -- | Constructs ListAvailableZonesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListAvailableZonesResponse' :: ( { "AZList" :: NullOrUndefined (AZList) } -> {"AZList" :: NullOrUndefined (AZList) } ) -> ListAvailableZonesResponse
-newListAvailableZonesResponse'  customize = (ListAvailableZonesResponse <<< customize) { "AZList": (NullOrUndefined Nothing) }
+newListAvailableZonesResponse' :: ( { "AZList" :: Maybe (AZList) } -> {"AZList" :: Maybe (AZList) } ) -> ListAvailableZonesResponse
+newListAvailableZonesResponse'  customize = (ListAvailableZonesResponse <<< customize) { "AZList": Nothing }
 
 
 
 newtype ListHapgsRequest = ListHapgsRequest 
-  { "NextToken" :: NullOrUndefined (PaginationToken)
+  { "NextToken" :: Maybe (PaginationToken)
   }
 derive instance newtypeListHapgsRequest :: Newtype ListHapgsRequest _
 derive instance repGenericListHapgsRequest :: Generic ListHapgsRequest _
@@ -793,18 +792,18 @@ instance encodeListHapgsRequest :: Encode ListHapgsRequest where encode = generi
 
 -- | Constructs ListHapgsRequest from required parameters
 newListHapgsRequest :: ListHapgsRequest
-newListHapgsRequest  = ListHapgsRequest { "NextToken": (NullOrUndefined Nothing) }
+newListHapgsRequest  = ListHapgsRequest { "NextToken": Nothing }
 
 -- | Constructs ListHapgsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListHapgsRequest' :: ( { "NextToken" :: NullOrUndefined (PaginationToken) } -> {"NextToken" :: NullOrUndefined (PaginationToken) } ) -> ListHapgsRequest
-newListHapgsRequest'  customize = (ListHapgsRequest <<< customize) { "NextToken": (NullOrUndefined Nothing) }
+newListHapgsRequest' :: ( { "NextToken" :: Maybe (PaginationToken) } -> {"NextToken" :: Maybe (PaginationToken) } ) -> ListHapgsRequest
+newListHapgsRequest'  customize = (ListHapgsRequest <<< customize) { "NextToken": Nothing }
 
 
 
 newtype ListHapgsResponse = ListHapgsResponse 
   { "HapgList" :: (HapgList)
-  , "NextToken" :: NullOrUndefined (PaginationToken)
+  , "NextToken" :: Maybe (PaginationToken)
   }
 derive instance newtypeListHapgsResponse :: Newtype ListHapgsResponse _
 derive instance repGenericListHapgsResponse :: Generic ListHapgsResponse _
@@ -814,17 +813,17 @@ instance encodeListHapgsResponse :: Encode ListHapgsResponse where encode = gene
 
 -- | Constructs ListHapgsResponse from required parameters
 newListHapgsResponse :: HapgList -> ListHapgsResponse
-newListHapgsResponse _HapgList = ListHapgsResponse { "HapgList": _HapgList, "NextToken": (NullOrUndefined Nothing) }
+newListHapgsResponse _HapgList = ListHapgsResponse { "HapgList": _HapgList, "NextToken": Nothing }
 
 -- | Constructs ListHapgsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListHapgsResponse' :: HapgList -> ( { "HapgList" :: (HapgList) , "NextToken" :: NullOrUndefined (PaginationToken) } -> {"HapgList" :: (HapgList) , "NextToken" :: NullOrUndefined (PaginationToken) } ) -> ListHapgsResponse
-newListHapgsResponse' _HapgList customize = (ListHapgsResponse <<< customize) { "HapgList": _HapgList, "NextToken": (NullOrUndefined Nothing) }
+newListHapgsResponse' :: HapgList -> ( { "HapgList" :: (HapgList) , "NextToken" :: Maybe (PaginationToken) } -> {"HapgList" :: (HapgList) , "NextToken" :: Maybe (PaginationToken) } ) -> ListHapgsResponse
+newListHapgsResponse' _HapgList customize = (ListHapgsResponse <<< customize) { "HapgList": _HapgList, "NextToken": Nothing }
 
 
 
 newtype ListHsmsRequest = ListHsmsRequest 
-  { "NextToken" :: NullOrUndefined (PaginationToken)
+  { "NextToken" :: Maybe (PaginationToken)
   }
 derive instance newtypeListHsmsRequest :: Newtype ListHsmsRequest _
 derive instance repGenericListHsmsRequest :: Generic ListHsmsRequest _
@@ -834,19 +833,19 @@ instance encodeListHsmsRequest :: Encode ListHsmsRequest where encode = genericE
 
 -- | Constructs ListHsmsRequest from required parameters
 newListHsmsRequest :: ListHsmsRequest
-newListHsmsRequest  = ListHsmsRequest { "NextToken": (NullOrUndefined Nothing) }
+newListHsmsRequest  = ListHsmsRequest { "NextToken": Nothing }
 
 -- | Constructs ListHsmsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListHsmsRequest' :: ( { "NextToken" :: NullOrUndefined (PaginationToken) } -> {"NextToken" :: NullOrUndefined (PaginationToken) } ) -> ListHsmsRequest
-newListHsmsRequest'  customize = (ListHsmsRequest <<< customize) { "NextToken": (NullOrUndefined Nothing) }
+newListHsmsRequest' :: ( { "NextToken" :: Maybe (PaginationToken) } -> {"NextToken" :: Maybe (PaginationToken) } ) -> ListHsmsRequest
+newListHsmsRequest'  customize = (ListHsmsRequest <<< customize) { "NextToken": Nothing }
 
 
 
 -- | <p>Contains the output of the <code>ListHsms</code> operation.</p>
 newtype ListHsmsResponse = ListHsmsResponse 
-  { "HsmList" :: NullOrUndefined (HsmList)
-  , "NextToken" :: NullOrUndefined (PaginationToken)
+  { "HsmList" :: Maybe (HsmList)
+  , "NextToken" :: Maybe (PaginationToken)
   }
 derive instance newtypeListHsmsResponse :: Newtype ListHsmsResponse _
 derive instance repGenericListHsmsResponse :: Generic ListHsmsResponse _
@@ -856,17 +855,17 @@ instance encodeListHsmsResponse :: Encode ListHsmsResponse where encode = generi
 
 -- | Constructs ListHsmsResponse from required parameters
 newListHsmsResponse :: ListHsmsResponse
-newListHsmsResponse  = ListHsmsResponse { "HsmList": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListHsmsResponse  = ListHsmsResponse { "HsmList": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListHsmsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListHsmsResponse' :: ( { "HsmList" :: NullOrUndefined (HsmList) , "NextToken" :: NullOrUndefined (PaginationToken) } -> {"HsmList" :: NullOrUndefined (HsmList) , "NextToken" :: NullOrUndefined (PaginationToken) } ) -> ListHsmsResponse
-newListHsmsResponse'  customize = (ListHsmsResponse <<< customize) { "HsmList": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListHsmsResponse' :: ( { "HsmList" :: Maybe (HsmList) , "NextToken" :: Maybe (PaginationToken) } -> {"HsmList" :: Maybe (HsmList) , "NextToken" :: Maybe (PaginationToken) } ) -> ListHsmsResponse
+newListHsmsResponse'  customize = (ListHsmsResponse <<< customize) { "HsmList": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListLunaClientsRequest = ListLunaClientsRequest 
-  { "NextToken" :: NullOrUndefined (PaginationToken)
+  { "NextToken" :: Maybe (PaginationToken)
   }
 derive instance newtypeListLunaClientsRequest :: Newtype ListLunaClientsRequest _
 derive instance repGenericListLunaClientsRequest :: Generic ListLunaClientsRequest _
@@ -876,18 +875,18 @@ instance encodeListLunaClientsRequest :: Encode ListLunaClientsRequest where enc
 
 -- | Constructs ListLunaClientsRequest from required parameters
 newListLunaClientsRequest :: ListLunaClientsRequest
-newListLunaClientsRequest  = ListLunaClientsRequest { "NextToken": (NullOrUndefined Nothing) }
+newListLunaClientsRequest  = ListLunaClientsRequest { "NextToken": Nothing }
 
 -- | Constructs ListLunaClientsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListLunaClientsRequest' :: ( { "NextToken" :: NullOrUndefined (PaginationToken) } -> {"NextToken" :: NullOrUndefined (PaginationToken) } ) -> ListLunaClientsRequest
-newListLunaClientsRequest'  customize = (ListLunaClientsRequest <<< customize) { "NextToken": (NullOrUndefined Nothing) }
+newListLunaClientsRequest' :: ( { "NextToken" :: Maybe (PaginationToken) } -> {"NextToken" :: Maybe (PaginationToken) } ) -> ListLunaClientsRequest
+newListLunaClientsRequest'  customize = (ListLunaClientsRequest <<< customize) { "NextToken": Nothing }
 
 
 
 newtype ListLunaClientsResponse = ListLunaClientsResponse 
   { "ClientList" :: (ClientList)
-  , "NextToken" :: NullOrUndefined (PaginationToken)
+  , "NextToken" :: Maybe (PaginationToken)
   }
 derive instance newtypeListLunaClientsResponse :: Newtype ListLunaClientsResponse _
 derive instance repGenericListLunaClientsResponse :: Generic ListLunaClientsResponse _
@@ -897,12 +896,12 @@ instance encodeListLunaClientsResponse :: Encode ListLunaClientsResponse where e
 
 -- | Constructs ListLunaClientsResponse from required parameters
 newListLunaClientsResponse :: ClientList -> ListLunaClientsResponse
-newListLunaClientsResponse _ClientList = ListLunaClientsResponse { "ClientList": _ClientList, "NextToken": (NullOrUndefined Nothing) }
+newListLunaClientsResponse _ClientList = ListLunaClientsResponse { "ClientList": _ClientList, "NextToken": Nothing }
 
 -- | Constructs ListLunaClientsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListLunaClientsResponse' :: ClientList -> ( { "ClientList" :: (ClientList) , "NextToken" :: NullOrUndefined (PaginationToken) } -> {"ClientList" :: (ClientList) , "NextToken" :: NullOrUndefined (PaginationToken) } ) -> ListLunaClientsResponse
-newListLunaClientsResponse' _ClientList customize = (ListLunaClientsResponse <<< customize) { "ClientList": _ClientList, "NextToken": (NullOrUndefined Nothing) }
+newListLunaClientsResponse' :: ClientList -> ( { "ClientList" :: (ClientList) , "NextToken" :: Maybe (PaginationToken) } -> {"ClientList" :: (ClientList) , "NextToken" :: Maybe (PaginationToken) } ) -> ListLunaClientsResponse
+newListLunaClientsResponse' _ClientList customize = (ListLunaClientsResponse <<< customize) { "ClientList": _ClientList, "NextToken": Nothing }
 
 
 
@@ -948,8 +947,8 @@ newListTagsForResourceResponse' _TagList customize = (ListTagsForResourceRespons
 
 newtype ModifyHapgRequest = ModifyHapgRequest 
   { "HapgArn" :: (HapgArn)
-  , "Label" :: NullOrUndefined (Label)
-  , "PartitionSerialList" :: NullOrUndefined (PartitionSerialList)
+  , "Label" :: Maybe (Label)
+  , "PartitionSerialList" :: Maybe (PartitionSerialList)
   }
 derive instance newtypeModifyHapgRequest :: Newtype ModifyHapgRequest _
 derive instance repGenericModifyHapgRequest :: Generic ModifyHapgRequest _
@@ -959,17 +958,17 @@ instance encodeModifyHapgRequest :: Encode ModifyHapgRequest where encode = gene
 
 -- | Constructs ModifyHapgRequest from required parameters
 newModifyHapgRequest :: HapgArn -> ModifyHapgRequest
-newModifyHapgRequest _HapgArn = ModifyHapgRequest { "HapgArn": _HapgArn, "Label": (NullOrUndefined Nothing), "PartitionSerialList": (NullOrUndefined Nothing) }
+newModifyHapgRequest _HapgArn = ModifyHapgRequest { "HapgArn": _HapgArn, "Label": Nothing, "PartitionSerialList": Nothing }
 
 -- | Constructs ModifyHapgRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyHapgRequest' :: HapgArn -> ( { "HapgArn" :: (HapgArn) , "Label" :: NullOrUndefined (Label) , "PartitionSerialList" :: NullOrUndefined (PartitionSerialList) } -> {"HapgArn" :: (HapgArn) , "Label" :: NullOrUndefined (Label) , "PartitionSerialList" :: NullOrUndefined (PartitionSerialList) } ) -> ModifyHapgRequest
-newModifyHapgRequest' _HapgArn customize = (ModifyHapgRequest <<< customize) { "HapgArn": _HapgArn, "Label": (NullOrUndefined Nothing), "PartitionSerialList": (NullOrUndefined Nothing) }
+newModifyHapgRequest' :: HapgArn -> ( { "HapgArn" :: (HapgArn) , "Label" :: Maybe (Label) , "PartitionSerialList" :: Maybe (PartitionSerialList) } -> {"HapgArn" :: (HapgArn) , "Label" :: Maybe (Label) , "PartitionSerialList" :: Maybe (PartitionSerialList) } ) -> ModifyHapgRequest
+newModifyHapgRequest' _HapgArn customize = (ModifyHapgRequest <<< customize) { "HapgArn": _HapgArn, "Label": Nothing, "PartitionSerialList": Nothing }
 
 
 
 newtype ModifyHapgResponse = ModifyHapgResponse 
-  { "HapgArn" :: NullOrUndefined (HapgArn)
+  { "HapgArn" :: Maybe (HapgArn)
   }
 derive instance newtypeModifyHapgResponse :: Newtype ModifyHapgResponse _
 derive instance repGenericModifyHapgResponse :: Generic ModifyHapgResponse _
@@ -979,23 +978,23 @@ instance encodeModifyHapgResponse :: Encode ModifyHapgResponse where encode = ge
 
 -- | Constructs ModifyHapgResponse from required parameters
 newModifyHapgResponse :: ModifyHapgResponse
-newModifyHapgResponse  = ModifyHapgResponse { "HapgArn": (NullOrUndefined Nothing) }
+newModifyHapgResponse  = ModifyHapgResponse { "HapgArn": Nothing }
 
 -- | Constructs ModifyHapgResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyHapgResponse' :: ( { "HapgArn" :: NullOrUndefined (HapgArn) } -> {"HapgArn" :: NullOrUndefined (HapgArn) } ) -> ModifyHapgResponse
-newModifyHapgResponse'  customize = (ModifyHapgResponse <<< customize) { "HapgArn": (NullOrUndefined Nothing) }
+newModifyHapgResponse' :: ( { "HapgArn" :: Maybe (HapgArn) } -> {"HapgArn" :: Maybe (HapgArn) } ) -> ModifyHapgResponse
+newModifyHapgResponse'  customize = (ModifyHapgResponse <<< customize) { "HapgArn": Nothing }
 
 
 
 -- | <p>Contains the inputs for the <a>ModifyHsm</a> operation.</p>
 newtype ModifyHsmRequest = ModifyHsmRequest 
   { "HsmArn" :: (HsmArn)
-  , "SubnetId" :: NullOrUndefined (SubnetId)
-  , "EniIp" :: NullOrUndefined (IpAddress)
-  , "IamRoleArn" :: NullOrUndefined (IamRoleArn)
-  , "ExternalId" :: NullOrUndefined (ExternalId)
-  , "SyslogIp" :: NullOrUndefined (IpAddress)
+  , "SubnetId" :: Maybe (SubnetId)
+  , "EniIp" :: Maybe (IpAddress)
+  , "IamRoleArn" :: Maybe (IamRoleArn)
+  , "ExternalId" :: Maybe (ExternalId)
+  , "SyslogIp" :: Maybe (IpAddress)
   }
 derive instance newtypeModifyHsmRequest :: Newtype ModifyHsmRequest _
 derive instance repGenericModifyHsmRequest :: Generic ModifyHsmRequest _
@@ -1005,18 +1004,18 @@ instance encodeModifyHsmRequest :: Encode ModifyHsmRequest where encode = generi
 
 -- | Constructs ModifyHsmRequest from required parameters
 newModifyHsmRequest :: HsmArn -> ModifyHsmRequest
-newModifyHsmRequest _HsmArn = ModifyHsmRequest { "HsmArn": _HsmArn, "EniIp": (NullOrUndefined Nothing), "ExternalId": (NullOrUndefined Nothing), "IamRoleArn": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing), "SyslogIp": (NullOrUndefined Nothing) }
+newModifyHsmRequest _HsmArn = ModifyHsmRequest { "HsmArn": _HsmArn, "EniIp": Nothing, "ExternalId": Nothing, "IamRoleArn": Nothing, "SubnetId": Nothing, "SyslogIp": Nothing }
 
 -- | Constructs ModifyHsmRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyHsmRequest' :: HsmArn -> ( { "HsmArn" :: (HsmArn) , "SubnetId" :: NullOrUndefined (SubnetId) , "EniIp" :: NullOrUndefined (IpAddress) , "IamRoleArn" :: NullOrUndefined (IamRoleArn) , "ExternalId" :: NullOrUndefined (ExternalId) , "SyslogIp" :: NullOrUndefined (IpAddress) } -> {"HsmArn" :: (HsmArn) , "SubnetId" :: NullOrUndefined (SubnetId) , "EniIp" :: NullOrUndefined (IpAddress) , "IamRoleArn" :: NullOrUndefined (IamRoleArn) , "ExternalId" :: NullOrUndefined (ExternalId) , "SyslogIp" :: NullOrUndefined (IpAddress) } ) -> ModifyHsmRequest
-newModifyHsmRequest' _HsmArn customize = (ModifyHsmRequest <<< customize) { "HsmArn": _HsmArn, "EniIp": (NullOrUndefined Nothing), "ExternalId": (NullOrUndefined Nothing), "IamRoleArn": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing), "SyslogIp": (NullOrUndefined Nothing) }
+newModifyHsmRequest' :: HsmArn -> ( { "HsmArn" :: (HsmArn) , "SubnetId" :: Maybe (SubnetId) , "EniIp" :: Maybe (IpAddress) , "IamRoleArn" :: Maybe (IamRoleArn) , "ExternalId" :: Maybe (ExternalId) , "SyslogIp" :: Maybe (IpAddress) } -> {"HsmArn" :: (HsmArn) , "SubnetId" :: Maybe (SubnetId) , "EniIp" :: Maybe (IpAddress) , "IamRoleArn" :: Maybe (IamRoleArn) , "ExternalId" :: Maybe (ExternalId) , "SyslogIp" :: Maybe (IpAddress) } ) -> ModifyHsmRequest
+newModifyHsmRequest' _HsmArn customize = (ModifyHsmRequest <<< customize) { "HsmArn": _HsmArn, "EniIp": Nothing, "ExternalId": Nothing, "IamRoleArn": Nothing, "SubnetId": Nothing, "SyslogIp": Nothing }
 
 
 
 -- | <p>Contains the output of the <a>ModifyHsm</a> operation.</p>
 newtype ModifyHsmResponse = ModifyHsmResponse 
-  { "HsmArn" :: NullOrUndefined (HsmArn)
+  { "HsmArn" :: Maybe (HsmArn)
   }
 derive instance newtypeModifyHsmResponse :: Newtype ModifyHsmResponse _
 derive instance repGenericModifyHsmResponse :: Generic ModifyHsmResponse _
@@ -1026,12 +1025,12 @@ instance encodeModifyHsmResponse :: Encode ModifyHsmResponse where encode = gene
 
 -- | Constructs ModifyHsmResponse from required parameters
 newModifyHsmResponse :: ModifyHsmResponse
-newModifyHsmResponse  = ModifyHsmResponse { "HsmArn": (NullOrUndefined Nothing) }
+newModifyHsmResponse  = ModifyHsmResponse { "HsmArn": Nothing }
 
 -- | Constructs ModifyHsmResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyHsmResponse' :: ( { "HsmArn" :: NullOrUndefined (HsmArn) } -> {"HsmArn" :: NullOrUndefined (HsmArn) } ) -> ModifyHsmResponse
-newModifyHsmResponse'  customize = (ModifyHsmResponse <<< customize) { "HsmArn": (NullOrUndefined Nothing) }
+newModifyHsmResponse' :: ( { "HsmArn" :: Maybe (HsmArn) } -> {"HsmArn" :: Maybe (HsmArn) } ) -> ModifyHsmResponse
+newModifyHsmResponse'  customize = (ModifyHsmResponse <<< customize) { "HsmArn": Nothing }
 
 
 
@@ -1057,7 +1056,7 @@ newModifyLunaClientRequest' _Certificate _ClientArn customize = (ModifyLunaClien
 
 
 newtype ModifyLunaClientResponse = ModifyLunaClientResponse 
-  { "ClientArn" :: NullOrUndefined (ClientArn)
+  { "ClientArn" :: Maybe (ClientArn)
   }
 derive instance newtypeModifyLunaClientResponse :: Newtype ModifyLunaClientResponse _
 derive instance repGenericModifyLunaClientResponse :: Generic ModifyLunaClientResponse _
@@ -1067,12 +1066,12 @@ instance encodeModifyLunaClientResponse :: Encode ModifyLunaClientResponse where
 
 -- | Constructs ModifyLunaClientResponse from required parameters
 newModifyLunaClientResponse :: ModifyLunaClientResponse
-newModifyLunaClientResponse  = ModifyLunaClientResponse { "ClientArn": (NullOrUndefined Nothing) }
+newModifyLunaClientResponse  = ModifyLunaClientResponse { "ClientArn": Nothing }
 
 -- | Constructs ModifyLunaClientResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyLunaClientResponse' :: ( { "ClientArn" :: NullOrUndefined (ClientArn) } -> {"ClientArn" :: NullOrUndefined (ClientArn) } ) -> ModifyLunaClientResponse
-newModifyLunaClientResponse'  customize = (ModifyLunaClientResponse <<< customize) { "ClientArn": (NullOrUndefined Nothing) }
+newModifyLunaClientResponse' :: ( { "ClientArn" :: Maybe (ClientArn) } -> {"ClientArn" :: Maybe (ClientArn) } ) -> ModifyLunaClientResponse
+newModifyLunaClientResponse'  customize = (ModifyLunaClientResponse <<< customize) { "ClientArn": Nothing }
 
 
 
